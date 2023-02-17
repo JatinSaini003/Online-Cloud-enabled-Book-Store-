@@ -16,6 +16,10 @@ const Header = () => {
                 
             </div>
         </div>
+        <div className='Login_Button_cluster'>
+            <div className="loginButton">Log In</div>
+            
+        </div>
     </div>
   )
 }

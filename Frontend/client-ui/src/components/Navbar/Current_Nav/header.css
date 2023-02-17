@@ -19,7 +19,7 @@
     padding: 10px;
 }
 .listItem{
-    margin: 10px 20px;
+    margin: 10px 15px;
     font-weight: bold;
     cursor: pointer;
 }
@@ -34,6 +34,24 @@
 .svg-title{
     width: 30px;
     height: 30px;
+}
+.Login_Button_cluster{
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    padding: 20px;
+}
+.loginButton{
+    border: 2px solid black;
+    padding: 6px;
+    border-radius: 10%;
+    font-weight: bold;
+    cursor: pointer;
+
+}
+.loginButton:hover{
+    scale: 1.2;
+    transition: 0.2s all ease-in-out;
 }
 @media screen and (max-width: 810px) {
     .header-container{
