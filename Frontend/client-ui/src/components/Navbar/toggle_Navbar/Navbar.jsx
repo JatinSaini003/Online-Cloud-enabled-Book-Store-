@@ -34,8 +34,9 @@ export const Navbar = () => {
   return (
     <>
     <div className="nav-title">
-    B00k5..
+    BOOKS
     </div>
+    
     <motion.nav
       initial={false}
       animate={isOpen ? "open" : "closed"}

@@ -1,58 +1,86 @@
-@import url('https://fonts.googleapis.com/css2?family=Pacifico&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Jost&display=swap');
 .header-container{
-    display: flex;
-    justify-content: space-around;
-    height: 80px;
+    padding: 10px 30px;
+    margin: 10px 2px;
     background-color: antiquewhite;
+    justify-content: space-between;
+    display: flex;
+    align-items: center;
+    height: 90px;
+}
+.Title{
+    display: flex;
+    align-items: center;
+    letter-spacing: 3px;
+    font-weight: bold;
+    font-family: 'Jost', sans-serif;
+    font-size: 30px;
+    margin: 0px 20px;
+}
+.logo_image{
+    margin-right: 20px;
+    width: 50px;
+    height: 50px;
+    object-fit: cover;
 }
 .listwrapper{
-    padding: 20px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    padding: 0px 10px;
 }
 .navList{
     display: flex;
-    letter-spacing: 2px;
-    width: 100%;
-    margin:10px;
-    padding: 10px;
+    font-family: 'Poppins', sans-serif;
 }
 .listItem{
-    margin: 10px 15px;
-    font-weight: bold;
+    margin: 0px 40px;
+    font-weight: 800;
     cursor: pointer;
+    display: inline-block;
+    position: relative;
+  
 }
-.Title{
-    font-family: 'Pacifico', cursive;
-    font-size: 30px;
-    display: flex;
-    justify-content: flex-start;
-    align-items: center;
-    cursor: pointer;
+.listItem::after{
+  content: '';
+  position: absolute;
+  width: 100%;
+  transform: scaleX(0);
+  height: 2px;
+  bottom: -5px;
+  left: 0;
+  background-color: black;
+  transform-origin: bottom right;
+  transition: transform 0.25s ease-out;
 }
-.svg-title{
-    width: 30px;
-    height: 30px;
+.listItem:hover::after{
+    transform: scaleX(1);
+  transform-origin: bottom left;
 }
-.Login_Button_cluster{
-    display: flex;
-    align-items: center;
-    justify-content: flex-end;
-    padding: 20px;
-}
-.loginButton{
-    border: 2px solid black;
-    padding: 6px;
-    border-radius: 10%;
-    font-weight: bold;
-    cursor: pointer;
 
+
+.header-buttons{
+    margin: 0px 10px;
+    display: flex;
 }
-.loginButton:hover{
-    scale: 1.2;
+.but{
+    margin:0px 10px;
+    padding:8px 20px;
+    border:2px solid black;
+    border-radius: 10px;
+    font-family: 'Poppins', sans-serif;
+    transition: 0.2s all ease-in;
+}
+.but:hover{
+    background-color: black;
+    color: white;
     transition: 0.2s all ease-in-out;
 }
+
+@media screen and (max-width: 1281px) {
+    .listItem{
+        margin:0px 20px;
+    }
+}
+
 @media screen and (max-width: 810px) {
     .header-container{
       display: none;
