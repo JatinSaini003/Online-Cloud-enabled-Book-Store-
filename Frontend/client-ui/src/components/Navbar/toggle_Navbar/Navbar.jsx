@@ -33,9 +33,9 @@ export const Navbar = () => {
 
   return (
     <>
-    <div className="nav-title">
-    BOOKS
-    </div>
+    <div className="nav_title">
+        BOOKS
+      </div>
     
     <motion.nav
       initial={false}

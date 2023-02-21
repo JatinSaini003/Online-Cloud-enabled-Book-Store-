@@ -3,7 +3,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Jost&display=swap');
   nav {
-    position: absolute;
+    position: fixed;
     top: 0;
     left: 0;
     bottom: 0;
@@ -26,8 +26,8 @@
     top: 0;
     left: 0;
     bottom: 0;
-    width: 300px;
-    backdrop-filter: blur(3px);
+    width: 700px;
+    backdrop-filter: blur(12px);
   }
   
   button {
@@ -104,17 +104,16 @@
     align-items: center;
     cursor: pointer;
   }
-  .nav-title{
-
-      display: none;
-      justify-content: center;
-      padding: 20px;
-      margin: 0px 10px;
-      font-size: 30px;
-      height: 80px;
-      font-family: 'Jost', sans-serif;
-  
-  }
+  .nav_title{
+    width:100%;
+    text-align: center;
+    font-size: 50px;
+    letter-spacing: 2px;
+    padding: 3px 5px;
+    margin: 10px 0px;
+    font-family: "Jost",sans-serif;
+    cursor: pointer;
+}
 
   @media screen and (max-width: 810px) {
     nav{
