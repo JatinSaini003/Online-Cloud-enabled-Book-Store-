@@ -80,6 +80,70 @@
         margin:0px 20px;
     }
 }
+@media screen and (max-width:1025px) {
+    .Title{
+        display: flex;
+        align-items: center;
+        letter-spacing: 3px;
+        font-weight: bold;
+        font-family: 'Jost', sans-serif;
+        font-size: 25px;
+        margin: 0px 10px;
+    }
+    .logo_image{
+        margin-right: 20px;
+        width: 40px;
+        height: 40px;
+        object-fit: cover;
+    }
+    .listwrapper{
+        padding: 0px 2px;
+        margin-left: 10px;
+    }
+    .navList{
+        display: flex;
+        font-family: 'Poppins', sans-serif;
+    }
+    .listItem{
+        margin: 0px 20px;
+        font-weight: 800;
+        cursor: pointer;
+        display: inline-block;
+        position: relative;
+      
+    }
+    .listItem::after{
+      content: '';
+      position: absolute;
+      width: 100%;
+      transform: scaleX(0);
+      height: 2px;
+      bottom: -5px;
+      left: 0;
+      background-color: black;
+      transform-origin: bottom right;
+      transition: transform 0.25s ease-out;
+    }
+    .listItem:hover::after{
+        transform: scaleX(1);
+      transform-origin: bottom left;
+    }
+    
+    
+    .header-buttons{
+        margin: 0px 0px;
+        
+        display: flex;
+    }
+    .but{
+        margin:0px 10px;
+        padding:5px 15px;
+        border:2px solid black;
+        border-radius: 10px;
+        font-family: 'Poppins', sans-serif;
+        transition: 0.2s all ease-in;
+    }
+}
 
 @media screen and (max-width: 810px) {
     .header-container{

@@ -6,9 +6,12 @@ import Hero from './components/Heropage/Hero';
 function App() {
   return (
     <div className="App">
+      
       <Navbar/>
+      
       <Header/>
       <Hero/>
+      
       
     </div>
   );

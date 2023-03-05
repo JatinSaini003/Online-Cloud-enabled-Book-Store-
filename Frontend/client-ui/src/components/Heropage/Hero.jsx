@@ -11,7 +11,7 @@ const Hero = () => {
                     
                 </div>
                 <div className="sub-content">
-                        For more.
+                        For more. 
                     </div>
             </div>
             <div className="image-wrapper">
