@@ -1,57 +1,44 @@
-import * as React from "react";
-import { useRef } from "react";
-import { motion, useCycle } from "framer-motion";
-import { useDimensions } from "./use-dimensions";
-import { Toggle } from "./Toggle";
-import { Navigation } from "./Navigation";
+import React from 'react'
 import "./Nav-style.css"
-
-const sidebar = {
-  open: (height = 1000) => ({
-    clipPath: `circle(${height * 2 + 200}px at 40px 40px)`,
-    transition: {
-      type: "spring",
-      stiffness: 20,
-      restDelta: 2
-    }
-  }),
-  closed: {
-    clipPath: "circle(30px at 40px 40px)",
-    transition: {
-      delay: 0.5,
-      type: "spring",
-      stiffness: 400,
-      damping: 40
-    }
-  }
-};
-
-export const Navbar = () => {
-  const [isOpen, toggleOpen] = useCycle(false, true);
-  const containerRef = useRef(null);
-  const { height } = useDimensions(containerRef);
-
+import { RxCross2  } from 'react-icons/rx'
+import {} from 'framer-motion'
+const menu_items = ["Home", "E-books", "Subscription", "Publication", "About us"];
+const Navbar = ({toggle,open}) => {
   return (
-    <>
-    <div className="nav_title">
-        BOOKS
+    <div className={open?'Toggle-nav':'Toggle-nav-close'}>
+      {open?<><div className="close-icon">
+        <RxCross2 onClick={toggle}/>
       </div>
-    
-    <motion.nav
-      initial={false}
-      animate={isOpen ? "open" : "closed"}
-      custom={height}
-      ref={containerRef}
-    >
-      <motion.div className="background" variants={sidebar} />
-      <Navigation />
-      <Toggle toggle={() => toggleOpen()} />
-    </motion.nav>
-    </>
-  );
-};
-
+      <div className="t-nav-container" onClick={toggle}>
+      <span className='Line-sepreator'></span>
+        <div className="t-nav-listItems">
+        {menu_items.map((value, key) => (
+              <div className="t-listItem">{value}</div>
+            ))}
+        </div>
+        <span className='Line-sepreator'></span>
+        <div className="t-nav-buttons">
+        
+        <div className="t-but">
+            Login
+        </div>
+        <div className="t-but">
+            Signup
+        </div>
+      </div>
+      <div className="t-foot">
+        <div className="tf-title">
+          BOOKS
+        </div>
+        <div className="tf-sub-title">
+        Copyright © 2023 
+        </div>
+      </div>
+      </div></>:<></>}
+      
+      
+    </div>
+  )
+}
 
 export default Navbar
-
-

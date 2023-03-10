@@ -80,6 +80,23 @@
         margin:0px 20px;
     }
 }
+@media screen and (max-width:1094px) {
+    .Title{
+        font-size: 22px;
+        margin: 0px 7px;
+    }
+    .listItem{
+        margin: 0px 15px;
+        font-weight: 600;
+    }
+    .but{
+        margin: 0px 5px;
+        padding: 5px 10px;
+        font-size: 15px;
+
+    }
+}
+
 @media screen and (max-width:1025px) {
     .Title{
         display: flex;
@@ -144,8 +161,24 @@
         transition: 0.2s all ease-in;
     }
 }
+@media screen and (max-width:1010px) {
+    .Title{
+        font-size: 18px;
+        margin: 0px 5px;
+    }
+    .listItem{
+        margin: 0px 10px;
+        font-weight: 500;
+    }
+    .but{
+        margin: 0px 5px;
+        padding: 5px 10px;
+        font-size: 14px;
 
-@media screen and (max-width: 810px) {
+    }
+}
+
+@media screen and (max-width: 850px) {
     .header-container{
       display: none;
     }
