@@ -1,6 +1,7 @@
 import React from 'react'
-import { Carousel } from 'react-carousel-minimal';
-const Carousel_c = () => {
+import Carousel from 'better-react-carousel'
+import './style.css'
+const Carousel_2 = () => {
     const data = [
         {
           image: "https://upload.wikimedia.org/wikipedia/commons/thumb/0/0c/GoldenGateBridge-001.jpg/1200px-GoldenGateBridge-001.jpg",
@@ -39,47 +40,15 @@ const Carousel_c = () => {
           caption: "Darjeeling"
         }
       ];
-      const captionStyle = {
-        fontSize: '2em',
-        fontWeight: 'bold',
-      }
-      const slideNumberStyle = {
-        fontSize: '20px',
-        fontWeight: 'bold',
-      }
-   return(
-    <div style={{ textAlign: "center" }}>
-       
-        <div style={{
-          padding: "0 20px"
-        }}>
-          <Carousel
-            data={data}
-            time={10000}
-            width="850px"
-            height="500px"
-            captionStyle={captionStyle}
-            radius="5px"
-            slideNumber={false}
-            slideNumberStyle={slideNumberStyle}
-            captionPosition="bottom"
-            automatic={true}
-            dots={true}
-            pauseIconColor="white"
-            pauseIconSize="0px"
-            slideBackgroundColor="darkgrey"
-            slideImageFit="cover"
-            thumbnails={false}
-            style={{
-              textAlign: "center",
-              maxWidth: "850px",
-              maxHeight: "500px",
-              margin: "40px auto",
-            }}
-          />
-        </div>
-      </div>
-   )
+  return (
+    <Carousel rows={1}  loop>
+     {data.map((value,key)=>(
+        <Carousel.Item className='images-cover'>
+        <img width="100%"  src={value.image} alt={value.caption} className='images-cover'/>
+      </Carousel.Item>
+     ))}
+    </Carousel>
+  )
 }
 
-export default Carousel_c
+export default Carousel_2
