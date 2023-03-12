@@ -2,7 +2,7 @@ import React from "react";
 import { MdOutlineAccountCircle } from "react-icons/md";
 import book_svg from "../../../assets/logo.png";
 import "./header.css";
-const menu_items = ["Home", "Blog", "Subscription", "Publication", "About us"];
+const menu_items = ["Home", "E-books", "Subscription", "Publication", "About us"];
 const Header = () => {
   return (
     <div className="header-container">
