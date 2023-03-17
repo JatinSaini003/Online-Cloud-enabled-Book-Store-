@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import './style.css';
-
+import images from '../../assets/csm.jpg'
 const data = [
   {
     id: 1,
@@ -10,7 +10,7 @@ const data = [
   {
     id: 2,
     title: 'Product 2',
-    image: 'https://via.placeholder.com/200x200?text=Product+2',
+    image: images,
   },
   {
     id: 3,
