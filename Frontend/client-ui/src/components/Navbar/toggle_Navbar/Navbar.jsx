@@ -5,7 +5,7 @@ import {} from 'framer-motion'
 const menu_items = ["Home", "E-books", "Subscription", "Publication", "About us"];
 const Navbar = ({toggle,open}) => {
   return (
-    <div className={open?'Toggle-nav':'Toggle-nav-close'}>
+    <div className={open?'Toggle-nav':'Toggle-nav close'}>
       {open?<><div className="close-icon">
         <RxCross2 onClick={toggle}/>
       </div>
@@ -34,7 +34,8 @@ const Navbar = ({toggle,open}) => {
         Copyright © 2023 
         </div>
       </div>
-      </div></>:<></>}
+      </div>
+      </>:<></>}
       
       
     </div>

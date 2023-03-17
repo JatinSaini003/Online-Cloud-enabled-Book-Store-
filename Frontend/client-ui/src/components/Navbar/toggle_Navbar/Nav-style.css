@@ -9,15 +9,23 @@
   -webkit-box-shadow: -10px 0px 5px 0px rgba(66, 66, 66, 0.75);
   -moz-box-shadow: -11px 0px 5px 0px rgba(58, 57, 57, 0.75);
   box-shadow: 0px 0px 5px 0px rgba(68, 68, 68, 0.75);
-  transition: .5s ease-in all;
-  z-index: 1;
-}
-.Toggle-nav-close{
   
+  z-index: 1;
+  transition: .6s ease-in all;
+}
+.close{
+  
+  display: none;
+  position: absolute;
+  background-color: white;
+  width:0%;
   right: -100%;
   top: 0;
-  height: 100%;
-  transition: .5s ease-in all;
+  height: 0%;
+  -webkit-box-shadow: -10px 0px 5px 0px rgba(66, 66, 66, 0.75);
+  -moz-box-shadow: -11px 0px 5px 0px rgba(58, 57, 57, 0.75);
+  box-shadow: 0px 0px 5px 0px rgba(68, 68, 68, 0.75);
+  transition: .6s ease-out all;
   
 }
 .close-icon{
@@ -93,4 +101,5 @@
   .Toggle-nav{
     display: block;
   }
+  
 }

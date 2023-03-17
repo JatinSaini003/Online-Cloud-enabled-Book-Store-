@@ -7897,6 +7897,11 @@
   optionalDependencies:
     "fsevents" "^2.3.2"
 
+"react-silk@^0.0.1":
+  "integrity" "sha512-jhIi8pqeDXaO37JcvcNWLCG+SOqs9B2qAZEuXmNWPHvRWp2u4L/P3WBLb710e7MhMrtDXVcBufd9Q7O3YDDmJg=="
+  "resolved" "https://registry.npmjs.org/react-silk/-/react-silk-0.0.1.tgz"
+  "version" "0.0.1"
+
 "react-snap-carousel@^0.3.1":
   "integrity" "sha512-vRrwBV4sC3IP5JQukqAVwELDgOrJ2fZ7WT1aZY7HVDiSTDGXAl6ykvn5BV++O4f+cQ2Vmad1Vp996ytz1QQ03w=="
   "resolved" "https://registry.npmjs.org/react-snap-carousel/-/react-snap-carousel-0.3.1.tgz"
