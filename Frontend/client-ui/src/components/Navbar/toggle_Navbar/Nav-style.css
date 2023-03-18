@@ -1,126 +1,105 @@
-@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Teko&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Pacifico&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Jost&display=swap');
-  nav {
-    position: fixed;
-    top: 0;
-    left: 0;
-    bottom: 0;
-    width: 300px;
-    font-family: 'Poppins', sans-serif;
-    letter-spacing: 2px;
-    display: none;
-    
-  }
-  .nav-border{
-    width:100%;
-    height: 2px;
-    top:80px;
-    background-color: black;
-    position: absolute;
-  }
+.Toggle-nav{
+  display: none;
+  position: absolute;
+  background-color: white;
+  width:80%;
+  right: 0;
+  top: 0;
+  height: 100%;
+  -webkit-box-shadow: -10px 0px 5px 0px rgba(66, 66, 66, 0.75);
+  -moz-box-shadow: -11px 0px 5px 0px rgba(58, 57, 57, 0.75);
+  box-shadow: 0px 0px 5px 0px rgba(68, 68, 68, 0.75);
   
-  .background {
-    position: absolute;
-    top: 0;
-    left: 0;
-    bottom: 0;
-    width: 700px;
-    backdrop-filter: blur(12px);
-  }
+  z-index: 1;
+  transition: .6s ease-in all;
+}
+.close{
   
-  button {
-    outline: none;
-    border: none;
-    -webkit-user-select: none;
-    -moz-user-select: none;
-    -ms-user-select: none;
-    cursor: pointer;
-    position: absolute;
-    top: 18px;
-    left: 15px;
-    width: 50px;
-    height: 50px;
-    border-radius: 50%;
-    background: transparent;
-  }
+  display: none;
+  position: absolute;
+  background-color: white;
+  width:0%;
+  right: -100%;
+  top: 0;
+  height: 0%;
+  -webkit-box-shadow: -10px 0px 5px 0px rgba(66, 66, 66, 0.75);
+  -moz-box-shadow: -11px 0px 5px 0px rgba(58, 57, 57, 0.75);
+  box-shadow: 0px 0px 5px 0px rgba(68, 68, 68, 0.75);
+  transition: .6s ease-out all;
   
-  ul,
-  li {
-    margin: 0;
-    padding: 0;
-  }
-  
-  ul {
-    padding: 25px;
-    position: absolute;
-    top: 100px;
-    width: 230px;
-  }
-  
-  li {
-    list-style: none;
-    margin-bottom: 20px;
-    display: flex;
-    align-items: center;
-    cursor: pointer;
-  }
-  
-  .icon-placeholder {
-    width: 40px;
-    height: 40px;
-    border-radius: 50%;
-    flex: 40px 0;
-    margin-right: 20px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
-  
-  .text-placeholder {
-    border-radius: 5px;
-    width: 200px;
-    height: 40px;
-    flex: 1;
-    display: flex;
-    justify-content: flex-start;
-    align-items: center;
-    font-size: larger;
-    font-weight: bold;
-  }
-  
-  .refresh {
-    padding: 10px;
-    position: absolute;
-    background: rgba(0, 0, 0, 0.4);
-    border-radius: 10px;
-    width: 20px;
-    height: 20px;
-    top: 10px;
-    right: 10px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    cursor: pointer;
-  }
-  .nav_title{
-    display: none;
-    width:100%;
-    text-align: center;
-    font-size: 50px;
-    letter-spacing: 2px;
-    padding: 3px 5px;
-    margin: 10px 0px;
+}
+.close-icon{
+  position: absolute;
+  left:10px;
+  font-size: 30px;
+  top: 10px;
+  margin: 10px 20px;
+  cursor: pointer;
+}
+.t-nav-container{
+  width: 100%;
+  height: 80%;
+  margin: 50% 0px;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  text-align: center;
+}
+.Line-sepreator{
+  height: 2px;
+  width: 100%;
+  margin:1px 0px;
+}
+.t-nav-listItems{
+  padding: 3px 10px;
+  margin: 40px 0px;
+  font-size: 20px;
+  font-family: 'Poppins', sans-serif;
+  font-weight: 800;
+}
+.t-listItem{
+  margin: 30px 0px;
+  cursor: pointer;
+}
+.t-nav-buttons{
+  position: absolute;
+  margin: 10px 10px;
+  bottom: 160px;
+  display: flex;
+  justify-content: flex-end;
+}
+.t-but{
+  margin:0px 10px;
+  padding:8px 20px;
+  border:2px solid black;
+  border-radius: 10px;
+  font-family: 'Poppins', sans-serif;
+  transition: 0.2s all ease-in;
+}
+.t-but:hover{
+  background-color: black;
+  color: white;
+  transition: 0.2s all ease-in-out;
+}
+.t-foot{
+  position: absolute;
+  bottom: 50px;
+}
+.tf-title{
+  font-weight: bold;
     font-family: "Jost",sans-serif;
+    letter-spacing: 3px;
+    padding: 10px 0px;
     cursor: pointer;
 }
-
-  @media screen and (max-width: 810px) {
-    nav{
-      display: block;
-    }
-    .nav_title{
-      display: block;
-    }
+@media screen and (max-height:720px) {
+  .t-nav-container{
+    margin: 10% 0px;
   }
+}
+@media screen and (max-width:850px) {
+  .Toggle-nav{
+    display: block;
+  }
+  
+}
