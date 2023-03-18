@@ -104,17 +104,18 @@ const data = [
 const HorizontalScroll = ({ heading }) => {
   const [scrollX, setScrollX] = useState(0);
 
+
   const handleLeftClick = () => {
-    const container = document.getElementById("s-container");
+    const container = document.getElementById("items");
     const scrollAmount = container.clientWidth / 2;
     container.scrollBy({
       left: -scrollAmount,
-      behavior: "smooth",
+      behavior: "smooth"
     });
   };
 
   const handleRightClick = () => {
-    const container = document.getElementById("s-container");
+    const container = document.getElementById("items");
     const scrollAmount = container.clientWidth / 2;
     container.scrollBy({
       left: scrollAmount,
@@ -125,34 +126,37 @@ const HorizontalScroll = ({ heading }) => {
   const handleScroll = (e) => {
     const { scrollLeft } = e.target;
     setScrollX(scrollLeft);
+    scrollX.toFixed();
   };
+
+
 
   return (
     <div className="s-container" id="s-container" onScroll={handleScroll}>
       <div className="heading">{heading}</div>
-      
-        <div className="items">
-          {data.map((item) => (
-            <div key={item.id} className="item">
-              <div className="img-cont">
-                <img src={item.image} alt={item.title} />
-              </div>
 
-              <div className="title">{item.title}</div>
-              <div className="author-name">{item.author}</div>
-              <div className="price">{item.price}</div>
+      <div className="items" id="items">
+        {data.map((item) => (
+          <div key={item.id} className="item">
+            <div className="img-cont">
+              <img src={item.image} alt={item.title} />
             </div>
-          ))}
+
+            <div className="title">{item.title}</div>
+            <div className="author-name">{item.author}</div>
+            <div className="price">{item.price}</div>
           </div>
-          
-          <div className="left arrow" onClick={handleLeftClick}>
-            <MdArrowBackIos />
-          </div>
-          <div className="right arrow" onClick={handleRightClick}>
-            <MdArrowForwardIos />
-          </div>
-        </div>
-    
+        ))}
+      </div>
+
+      <div className="left arrow" onClick={handleLeftClick}>
+        <MdArrowBackIos />
+      </div>
+      <div className="right arrow" onClick={handleRightClick}>
+        <MdArrowForwardIos />
+      </div>
+    </div>
+
   );
 };
 
