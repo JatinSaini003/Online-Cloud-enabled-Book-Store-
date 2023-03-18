@@ -2,6 +2,7 @@ import React from 'react'
 import image_svg from "../../assets/undraw_books_re_8gea.svg"
 import Carousel from '../carousel/Carousel_3'
 import HorizontalScroll from '../New_Arrivals/Arrivals'
+
 import "./Hero.css"
 const Hero = () => {
   const images = [
@@ -168,9 +169,70 @@ const Hero = () => {
       image: "https://picsum.photos/200/300?random=5",
     },
   ];
+  const mockData = [
+    {
+      id: 1,
+      image: "https://picsum.photos/800/400?random=1",
+      title: "Product 1",
+      subtitle: "Description of product 1",
+      link: "/product1",
+      rating: 4.5,
+      price: 99.99,
+      discount:40,
+      isNew:true
+    },
+    {
+      id: 2,
+      image: "https://picsum.photos/800/400?random=2",
+      title: "Product 2",
+      subtitle: "Description of product 2",
+      link: "/product2",
+      rating: 3.2,
+      price: 49.99,
+      discount:40,
+      isNew:true
+    },
+    {
+      id: 3,
+      image: "https://picsum.photos/800/400?random=3",
+      title: "Product 3",
+      subtitle: "Description of product 3",
+      link: "/product3",
+      rating: 2.7,
+      price: 29.99,
+      discount:40,
+      isNew:true
+    },
+    {
+      id: 4,
+      image: "https://picsum.photos/800/400?random=4",
+      title: "Product 4",
+      subtitle: "Description of product 4",
+      link: "/product4",
+      rating: 4.9,
+      price: 199.99,
+      discount:40,
+      isNew:true
+    },
+    {
+      id: 5,
+      image: "https://picsum.photos/800/400?random=5",
+      title: "Product 5",
+      subtitle: "Description of product 5",
+      link: "/product5",
+      rating: 3.8,
+      price: 79.99,
+      discount:40,
+      isNew:true
+    },
+  ];
+  
   return (
     <div className='hero-container'>
         <Carousel images={images}/>
+        <HorizontalScroll heading={"New Arrivals"}/>
+        <HorizontalScroll heading={"New Arrivals"}/>
+        <HorizontalScroll heading={"New Arrivals"}/>
         <HorizontalScroll heading={"New Arrivals"}/>
     </div>
   )
