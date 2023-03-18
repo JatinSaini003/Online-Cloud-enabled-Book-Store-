@@ -3,11 +3,11 @@
 .header-container{
     padding: 10px 30px;
     margin: 10px 2px;
-    background-color: antiquewhite;
+    
     justify-content: space-between;
     display: flex;
     align-items: center;
-    height: 90px;
+    height: 60px;
 }
 .Title{
     display: flex;
@@ -60,6 +60,11 @@
 .header-buttons{
     margin: 0px 10px;
     display: flex;
+    text-decoration: none;
+}
+a{
+    text-decoration: none;
+    color: black;
 }
 .but{
     margin:0px 10px;
@@ -68,6 +73,11 @@
     border-radius: 10px;
     font-family: 'Poppins', sans-serif;
     transition: 0.2s all ease-in;
+    text-decoration: none;
+    color: black;
+}
+a{
+    text-decoration: none;
 }
 .but:hover{
     background-color: black;
@@ -95,6 +105,25 @@
         font-size: 15px;
 
     }
+}
+.login-avatar{
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    padding: 0px 20px;
+}
+.avatar-img{
+    width:70px;
+    height:70px;
+    border-radius: 50%;
+    transform: translateY(10px);
+}
+.a-img{
+    width: 100%;
+    object-fit: cover;
+}
+.user_name{
+    font-size: 15px;
 }
 
 @media screen and (max-width:1025px) {

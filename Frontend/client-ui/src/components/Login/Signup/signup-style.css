@@ -1,0 +1,103 @@
+.signup-form-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    max-width: 500px;
+    margin: 0 auto;
+    margin-top: 80px;
+    margin-bottom: 30px;
+    padding: 40px;
+    border-radius: 5px;
+    box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.1);
+    background-color: #fff;
+  }
+  
+  .s-h1 {
+    margin-bottom: 20px;
+    font-size: 36px;
+    font-weight: 600;
+    color: #333;
+    text-align: center;
+  }
+  
+  .s-form {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    margin-bottom: 30px;
+  }
+  
+  .s-label {
+    display: block;
+    margin-bottom: 10px;
+    font-weight: 500;
+    color: #666;
+  }
+  
+  .signup-form-container input[type='text'],
+  input[type='email'],
+  input[type='password'] {
+     padding: 12px;
+    border: none;
+    border-radius: 5px;
+    height: 40px;
+    background-color: #f6f6f6;
+    font-size: 16px;
+    color: #333;
+    margin-bottom: 20px;
+    border: none;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+    outline: none;
+  }
+  .previous-btn{
+    text-align: center;
+    padding: 0px 10px;
+    margin-top:30px;
+    cursor: pointer;
+    transition: .2s all ease-in-out;
+  }
+  .previous-btn:hover{
+    text-decoration: underline;
+    
+  }
+  .signup-button {
+    background-color: #0077cc;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    padding: 12px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.2s ease-in-out;
+  }
+  
+  .login-p{
+    margin-top:20px
+  }
+  .link-to-login:hover{
+    text-decoration: underline;
+  }
+  
+  .signup-button:hover {
+    background-color: #005c99;
+  }
+  @media screen and (max-width:450px) {
+    .signup-form-container{
+        padding:20px;
+        max-width: 300px;
+        margin-top: 50px;
+    }
+    .s-form {
+        margin-bottom: 20px;
+    }
+    .s-h1{
+        margin-bottom: 10px;
+        font-size: 25px;
+    }
+    hr{
+        margin-bottom: 5px;
+    }
+    .social-login-icons {
+        margin-top: 10px;
+    }
+  }

@@ -1,0 +1,58 @@
+.Sub-card-cont{
+    width: 18rem;
+    height:30rem;
+    background-color: white;
+    border: 1px solid black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin: 3rem 1rem;
+    border-radius: 5px;
+    padding: 20px 20px;
+    transition: .2s ease-in-out all;
+}
+.Sub-card-cont:hover{
+    transform: translateY(-10px);
+}
+.s-card-img{
+    width:17rem;
+    height: 440px;
+    border: none;
+    border-radius: 5px;
+}
+.s-img{
+    width: 100%;
+    object-fit: cover;
+}
+.s-title{
+    padding: 10px 10px;
+    margin:10px 0px;
+    font-size: 24px;
+    text-align: center;
+    font-weight: bold;
+}
+.s-sub-title{
+    margin:10px 3px;
+    margin-bottom: 20px;
+    text-align: center;
+    font-style: italic;
+}
+.s-sub-title-price{
+    font-size: 30px;
+}
+.s-btn{
+    padding: 10px;
+}
+.s-button{
+    background-color: white;
+    border: 1px solid rgba(0, 0, 0, .5);
+    padding:10px 20px;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: .2s ease-in all;
+}
+.s-button:hover{
+    background-color: black;
+    color: white;
+}

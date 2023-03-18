@@ -1,0 +1,23 @@
+.star-rating {
+    display: inline-block;
+  }
+  
+  .star-rating__star {
+    display: inline-block;
+    font-size: 1.5rem;
+    color: #ccc;
+    cursor: default;
+    transition: color 0.3s ease-in-out;
+  }
+  
+  .star-rating__star--active {
+    color: #ffcc00;
+  }
+  
+  .star-rating__star--editable:hover,
+  .star-rating__star--editable:focus {
+    color: #ffcc00;
+    cursor: pointer;
+    outline: none;
+  }
+  

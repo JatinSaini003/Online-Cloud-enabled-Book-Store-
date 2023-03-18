@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import "./style.css";
 import images from "../../assets/csm.jpg";
 import { MdArrowBackIos, MdArrowForwardIos } from "react-icons/md";
+import { Link } from "react-router-dom";
 const data = [
   {
     id: 1,
@@ -101,11 +102,11 @@ const data = [
   },
 ];
 
-const HorizontalScroll = ({ heading }) => {
+const HorizontalScroll = ({ heading,id }) => {
   const [scrollX, setScrollX] = useState(0);
 
   const handleLeftClick = () => {
-    const container = document.getElementById("s-container");
+    const container = document.getElementById("items"+id);
     const scrollAmount = container.clientWidth / 2;
     container.scrollBy({
       left: -scrollAmount,
@@ -114,7 +115,7 @@ const HorizontalScroll = ({ heading }) => {
   };
 
   const handleRightClick = () => {
-    const container = document.getElementById("s-container");
+    const container = document.getElementById("items"+id);
     const scrollAmount = container.clientWidth / 2;
     container.scrollBy({
       left: scrollAmount,
@@ -131,8 +132,9 @@ const HorizontalScroll = ({ heading }) => {
     <div className="s-container" id="s-container" onScroll={handleScroll}>
       <div className="heading">{heading}</div>
       
-        <div className="items">
+        <div className="items" id={"items"+id}>
           {data.map((item) => (
+            <Link to={`/book/${item.id}`}>
             <div key={item.id} className="item">
               <div className="img-cont">
                 <img src={item.image} alt={item.title} />
@@ -142,6 +144,7 @@ const HorizontalScroll = ({ heading }) => {
               <div className="author-name">{item.author}</div>
               <div className="price">{item.price}</div>
             </div>
+            </Link>
           ))}
           </div>
           

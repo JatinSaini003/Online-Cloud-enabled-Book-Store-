@@ -1,0 +1,16 @@
+.e-container{
+    display: flex;
+    width:100%;
+    height: 100%;
+    justify-content: center;
+    align-items: center;
+}
+.coming-img{
+    margin-top:5%;
+    width:400px;
+    height:520px;
+}
+.image-e{
+    width: 100%;
+    object-fit: cover;
+}

@@ -5,6 +5,8 @@
     margin-right: 30px;
     white-space: nowrap;
     padding: 20px 0;
+    border:0;
+    border-top: 1px solid rgba(0,0,0,.1);
   }
  
 
@@ -95,5 +97,11 @@
   .arrow.right {
     top:-12.85rem;
     right: -100%;
+  }
+
+  @media screen and (max-width:450px) {
+    .arrow{
+      display: none;
+    }
   }
   

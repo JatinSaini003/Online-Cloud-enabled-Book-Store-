@@ -1,13 +1,15 @@
 import React from "react";
 import { MdOutlineAccountCircle } from "react-icons/md";
-import book_svg from "../../../assets/logo.png";
+import { Link } from 'react-router-dom'
+import book_svg from "../../../assets/2.png";
+import book_svg_2 from "../../../assets/logo.png"
 import "./header.css";
-const menu_items = ["Home", "E-books", "Subscription", "Publication", "About us"];
-const Header = () => {
+const menu_items = [{name:"Home",link:'/'}, {name:"E-books",link:'/ebook'}, {name:"Subscription",link:"/sub"}, {name:"Publication",link:'/publications'}, {name:"About us",link:'/about_us'}];
+const Header = ({login}) => {
   return (
     <div className="header-container">
       <div className="Title">
-        <img src={book_svg} className="logo_image"/>
+        <img src={book_svg_2} className="logo_image"/>
         BOOKS
       </div>
       
@@ -15,20 +17,34 @@ const Header = () => {
         <div className="listwrapper">
           <div className="navList">
             {menu_items.map((value, key) => (
-              <div className="listItem">{value}</div>
+              <Link to={value.link}>
+              <div className="listItem">{value.name}</div></Link>
             ))}
           </div>
         </div>
         
       </div>
-      <div className="header-buttons">
+      {login?<>
+      <div className="login-avatar">
+        <div className="avatar-img">
+          <img src={book_svg} className="a-img"/>
+        </div>
+        <div className="user_name">
+          Jatin
+        </div>
+      </div>
+      </>:<div className="header-buttons">
+        <Link to="/login">
         <div className="but">
             Login
         </div>
+        </Link>
+        <Link to="/signup">
         <div className="but">
             Signup
         </div>
-      </div>
+        </Link>
+      </div>}
       
     </div>
   );

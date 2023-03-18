@@ -1,8 +1,10 @@
 import React from 'react'
 import image_svg from "../../assets/undraw_books_re_8gea.svg"
 import Carousel from '../carousel/Carousel_3'
+import LoginForm from '../Login/Signup/login'
+import SignupForm from '../Login/Signup/signup'
 import HorizontalScroll from '../New_Arrivals/Arrivals'
-
+import {Routes,Route} from "react-router-dom"
 import "./Hero.css"
 const Hero = () => {
   const images = [
@@ -228,13 +230,15 @@ const Hero = () => {
   ];
   
   return (
+    <>
     <div className='hero-container'>
         <Carousel images={images}/>
-        <HorizontalScroll heading={"New Arrivals"}/>
-        <HorizontalScroll heading={"New Arrivals"}/>
-        <HorizontalScroll heading={"New Arrivals"}/>
-        <HorizontalScroll heading={"New Arrivals"}/>
-    </div>
+        <HorizontalScroll heading={"New Arrivals"} id="1"/>
+        <HorizontalScroll heading={"New Arrivals"} id="2"/>
+        <HorizontalScroll heading={"New Arrivals"} id="3"/>
+        <HorizontalScroll heading={"New Arrivals"} id="4"/>
+  </div>
+  </>
   )
 }
 

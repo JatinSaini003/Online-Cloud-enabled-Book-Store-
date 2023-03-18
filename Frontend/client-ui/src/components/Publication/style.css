@@ -1,0 +1,24 @@
+.p-cont{
+    margin:30px 20px;
+    padding: 20px;
+}
+.search-compo{
+    padding: 10px;
+}
+.scroll-genre{
+    margin-left: 10%;
+    margin-top: 2%;
+}
+
+@media screen and (max-width:450px) {
+    .p-cont{
+        margin: 20px 10px;
+    }
+    .search-compo{
+        padding: 5px;
+    }
+    .scroll-genre{
+        margin-left: 0;
+        
+    }
+}
