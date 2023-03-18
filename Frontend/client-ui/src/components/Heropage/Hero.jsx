@@ -2,7 +2,6 @@ import React from 'react'
 import image_svg from "../../assets/undraw_books_re_8gea.svg"
 import Carousel from '../carousel/Carousel_3'
 import HorizontalScroll from '../New_Arrivals/Arrivals'
-
 import "./Hero.css"
 const Hero = () => {
   const images = [
@@ -172,7 +171,7 @@ const Hero = () => {
   return (
     <div className='hero-container'>
         <Carousel images={images}/>
-        <HorizontalScroll/>
+        <HorizontalScroll heading={"New Arrivals"}/>
     </div>
   )
 }
