@@ -4,8 +4,13 @@ import { Link } from 'react-router-dom'
 import book_svg from "../../../assets/2.png";
 import book_svg_2 from "../../../assets/logo.png"
 import "./header.css";
+import Dropdown from "./Dropdown";
+import Avtar_image from "./avtar-image";
 const menu_items = [{name:"Home",link:'/'}, {name:"E-books",link:'/ebook'}, {name:"Subscription",link:"/sub"}, {name:"Publication",link:'/publications'}, {name:"About us",link:'/about_us'}];
-const Header = ({login}) => {
+
+
+
+const Header = ({login,handleLogin}) => {
   return (
     <div className="header-container">
       <div className="Title">
@@ -25,14 +30,14 @@ const Header = ({login}) => {
         
       </div>
       {login?<>
-      <div className="login-avatar">
-        <div className="avatar-img">
-          <img src={book_svg} className="a-img"/>
-        </div>
-        <div className="user_name">
-          Jatin
-        </div>
-      </div>
+        <div className="">
+        <Dropdown book_svg={book_svg} handleLogin={handleLogin}/>
+  </div>
+      
+
+     
+
+
       </>:<div className="header-buttons">
         <Link to="/login">
         <div className="but">

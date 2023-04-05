@@ -104,7 +104,7 @@ const data = [
 
 const HorizontalScroll = ({ heading,id }) => {
   const [scrollX, setScrollX] = useState(0);
-
+  const [hover,setHover] = useState(false)
   const handleLeftClick = () => {
     const container = document.getElementById("items"+id);
     const scrollAmount = container.clientWidth / 2;
@@ -128,6 +128,9 @@ const HorizontalScroll = ({ heading,id }) => {
     setScrollX(scrollLeft);
   };
 
+  const handleHover=()=>{
+    setHover(!hover)
+  }
   return (
     <div className="s-container" id="s-container" onScroll={handleScroll}>
       <div className="heading">{heading}</div>
@@ -139,13 +142,14 @@ const HorizontalScroll = ({ heading,id }) => {
               <div className="img-cont">
                 <img src={item.image} alt={item.title} />
               </div>
-
+              
               <div className="title">{item.title}</div>
               <div className="author-name">{item.author}</div>
               <div className="price">{item.price}</div>
             </div>
             </Link>
           ))}
+          
           </div>
           
           <div className="left arrow" onClick={handleLeftClick}>

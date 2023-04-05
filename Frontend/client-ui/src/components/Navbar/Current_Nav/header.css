@@ -125,6 +125,10 @@ a{
 .user_name{
     font-size: 15px;
 }
+.a-dropdown{
+    position: relative;
+    right: 40%;
+}
 
 @media screen and (max-width:1025px) {
     .Title{

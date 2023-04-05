@@ -1,14 +1,18 @@
-import React from "react";
+import React,{useEffect} from "react";
 import csm from "../../assets/csm.jpg";
+import bleach from '../../assets/Shunsui Kyoraku.png'
 import HorizontalScroll from "../New_Arrivals/Arrivals";
 import StarRating from "../New_Arrivals/StarRating";
 import "./p-style.css";
 const Product = () => {
+  useEffect(() => {
+    window.scrollTo(0, 0)
+  }, [])
   return (
     <div className="Product-conatiner">
       <div className="product-image-p">
         <div className="p-image">
-          <img src={csm} alt="image" className="pp-img" />
+          <img src={bleach} alt="image" className="pp-img" />
         </div>
         <div className="p-p">
           <div className="p-title">

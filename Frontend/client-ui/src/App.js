@@ -13,12 +13,16 @@ import Product from './components/Product_modal/Product';
 import E_books from './components/E-books';
 import SubCards from './components/Subscriptions';
 import Publication from './components/Publication';
+import Account from './components/User/Account';
 function App() {
  const[login,setLogin]=useState(true)
+ const handleLogin=()=>{
+  setLogin(!login)
+ }
   return (
     <div className="App">
       <Nav login={login}/>
-      <Header login={login}/>
+      <Header login={login} handleLogin={handleLogin}/>
       <Routes>
         <Route path='/' element={<Hero/>}/>
         <Route path='/login' element={<LoginForm/>}/>
@@ -27,6 +31,7 @@ function App() {
         <Route path="/ebook" element={<E_books/>}/>
         <Route path="/sub" element={<SubCards/>}/>
         <Route path="/publications" element={<Publication/>}/>
+        <Route path="/Account/:id" element={<Account/>}/>
       </Routes>
       <Footer/>
       

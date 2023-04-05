@@ -1,10 +1,11 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import image_svg from "../../assets/undraw_books_re_8gea.svg"
 import Carousel from '../carousel/Carousel_3'
 import LoginForm from '../Login/Signup/login'
 import SignupForm from '../Login/Signup/signup'
 import HorizontalScroll from '../New_Arrivals/Arrivals'
 import {Routes,Route} from "react-router-dom"
+import { Loader } from 'rsuite'
 import "./Hero.css"
 const Hero = () => {
   const images = [
@@ -228,16 +229,39 @@ const Hero = () => {
       isNew:true
     },
   ];
+
+  const [load,setLoad] = React.useState(false)
+  const delay = ms => new Promise(
+    resolve => setTimeout(resolve, ms)
+  );
+  async function makeRequest() {
+    console.log('before');
+
+    await delay(1000);
+
+    console.log('after');
+    setLoad(true)
+  }
+
+  useEffect(()=>{
+    makeRequest()
+    
+  },[])
   
   return (
+    
     <>
-    <div className='hero-container'>
+    {load?<div className='hero-container'>
         <Carousel images={images}/>
         <HorizontalScroll heading={"New Arrivals"} id="1"/>
         <HorizontalScroll heading={"New Arrivals"} id="2"/>
         <HorizontalScroll heading={"New Arrivals"} id="3"/>
         <HorizontalScroll heading={"New Arrivals"} id="4"/>
+  </div>:<div className='loader-conatiner'>
+  <Loader/>
   </div>
+  }
+    
   </>
   )
 }

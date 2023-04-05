@@ -8,10 +8,11 @@ function SignupForm() {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [c_password,setC_password] = useState('');
+  const [username,setUsername] = useState('')
     const[click,setClick] = useState(false)
   const handleSubmit = (event) => {
     event.preventDefault();
-    console.log(`First Name: ${firstName}, Last Name: ${lastName}, Email: ${email}, Password: ${password}`);
+    console.log(`First Name: ${firstName}, Last Name: ${lastName}, Email: ${email},Username: ${username}, Password: ${password}`);
   };
   const handleClick = ()=>{
     setClick(!click)
@@ -21,7 +22,11 @@ function SignupForm() {
       <h1 className='s-h1'>Sign Up</h1>
       <form onSubmit={handleSubmit} className="s-form">
         
-        {click?<><label className='s-label'>
+        {click?<>
+          <label className='s-label'>
+          Username</label>
+          <input type="text" value={username} onChange={(event) => setUsername(event.target.value)} />
+        <label className='s-label'>
           Password</label>
           <input type="password" value={password} onChange={(event) => setPassword(event.target.value)} />
         <label className='s-label'>
