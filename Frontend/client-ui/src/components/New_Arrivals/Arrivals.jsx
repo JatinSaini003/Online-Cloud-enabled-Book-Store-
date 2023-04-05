@@ -104,18 +104,19 @@ const data = [
 
 const HorizontalScroll = ({ heading,id }) => {
   const [scrollX, setScrollX] = useState(0);
-  const [hover,setHover] = useState(false)
+
+
   const handleLeftClick = () => {
-    const container = document.getElementById("items"+id);
+    const container = document.getElementById("items");
     const scrollAmount = container.clientWidth / 2;
     container.scrollBy({
       left: -scrollAmount,
-      behavior: "smooth",
+      behavior: "smooth"
     });
   };
 
   const handleRightClick = () => {
-    const container = document.getElementById("items"+id);
+    const container = document.getElementById("items");
     const scrollAmount = container.clientWidth / 2;
     container.scrollBy({
       left: scrollAmount,
@@ -126,40 +127,37 @@ const HorizontalScroll = ({ heading,id }) => {
   const handleScroll = (e) => {
     const { scrollLeft } = e.target;
     setScrollX(scrollLeft);
+    scrollX.toFixed();
   };
 
-  const handleHover=()=>{
-    setHover(!hover)
-  }
+
+
   return (
     <div className="s-container" id="s-container" onScroll={handleScroll}>
       <div className="heading">{heading}</div>
-      
-        <div className="items" id={"items"+id}>
-          {data.map((item) => (
-            <Link to={`/book/${item.id}`}>
-            <div key={item.id} className="item">
-              <div className="img-cont">
-                <img src={item.image} alt={item.title} />
-              </div>
-              
-              <div className="title">{item.title}</div>
-              <div className="author-name">{item.author}</div>
-              <div className="price">{item.price}</div>
+
+      <div className="items" id="items">
+        {data.map((item) => (
+          <div key={item.id} className="item">
+            <div className="img-cont">
+              <img src={item.image} alt={item.title} />
             </div>
-            </Link>
-          ))}
-          
+
+            <div className="title">{item.title}</div>
+            <div className="author-name">{item.author}</div>
+            <div className="price">{item.price}</div>
           </div>
-          
-          <div className="left arrow" onClick={handleLeftClick}>
-            <MdArrowBackIos />
-          </div>
-          <div className="right arrow" onClick={handleRightClick}>
-            <MdArrowForwardIos />
-          </div>
-        </div>
-    
+        ))}
+      </div>
+
+      <div className="left arrow" onClick={handleLeftClick}>
+        <MdArrowBackIos />
+      </div>
+      <div className="right arrow" onClick={handleRightClick}>
+        <MdArrowForwardIos />
+      </div>
+    </div>
+
   );
 };
 
