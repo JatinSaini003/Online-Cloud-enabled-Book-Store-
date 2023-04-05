@@ -4,15 +4,11 @@
 .header-container {
     padding: 10px 30px;
     margin: 10px 2px;
-    
+
     justify-content: space-between;
     display: flex;
     align-items: center;
-<<<<<<< HEAD
     height: 60px;
-=======
-    height: 50px;
->>>>>>> a7c651ab8420063e8b4f0828e019b078126c3aec
 }
 
 .Title {
@@ -74,7 +70,8 @@
     display: flex;
     text-decoration: none;
 }
-a{
+
+a {
     text-decoration: none;
     color: black;
 }
@@ -89,7 +86,8 @@ a{
     text-decoration: none;
     color: black;
 }
-a{
+
+a {
     text-decoration: none;
 }
 
@@ -123,26 +121,31 @@ a{
 
     }
 }
-.login-avatar{
+
+.login-avatar {
     display: flex;
     align-items: center;
     cursor: pointer;
     padding: 0px 20px;
 }
-.avatar-img{
-    width:70px;
-    height:70px;
+
+.avatar-img {
+    width: 70px;
+    height: 70px;
     border-radius: 50%;
     transform: translateY(10px);
 }
-.a-img{
+
+.a-img {
     width: 100%;
     object-fit: cover;
 }
-.user_name{
+
+.user_name {
     font-size: 15px;
 }
-.a-dropdown{
+
+.a-dropdown {
     position: relative;
     right: 40%;
 }
