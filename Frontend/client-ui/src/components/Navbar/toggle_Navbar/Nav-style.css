@@ -10,8 +10,8 @@
   -moz-box-shadow: -11px 0px 5px 0px rgba(58, 57, 57, 0.75);
   box-shadow: 0px 0px 5px 0px rgba(68, 68, 68, 0.75);
   
-  z-index: 1;
-  transition: .6s ease-in all;
+  z-index: 10;
+  transition: .3s ease-in all;
 }
 .close{
   
@@ -25,7 +25,7 @@
   -webkit-box-shadow: -10px 0px 5px 0px rgba(66, 66, 66, 0.75);
   -moz-box-shadow: -11px 0px 5px 0px rgba(58, 57, 57, 0.75);
   box-shadow: 0px 0px 5px 0px rgba(68, 68, 68, 0.75);
-  transition: .6s ease-out all;
+  transition: .2s ease-out all;
   
 }
 .close-icon{
@@ -67,6 +67,11 @@
   bottom: 160px;
   display: flex;
   justify-content: flex-end;
+}
+.t-user_name{
+  font-size: 20px;
+  font-weight: bold;
+  margin-right: 30px;
 }
 .t-but{
   margin:0px 10px;

@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import "./style.css";
 import images from "../../assets/csm.jpg";
 import { MdArrowBackIos, MdArrowForwardIos } from "react-icons/md";
+import { Link } from "react-router-dom";
 const data = [
   {
     id: 1,
@@ -101,7 +102,7 @@ const data = [
   },
 ];
 
-const HorizontalScroll = ({ heading }) => {
+const HorizontalScroll = ({ heading,id }) => {
   const [scrollX, setScrollX] = useState(0);
 
 

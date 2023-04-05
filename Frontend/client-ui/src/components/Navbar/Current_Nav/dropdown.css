@@ -1,0 +1,82 @@
+.dropdown {
+    position: relative;
+    margin: 0px 0px;
+    margin-right: 20px;
+  }
+  
+  .menu {
+    position: absolute;
+  
+    list-style-type: none;
+    margin: 0px 3px;
+    top:60px;
+    padding: 3px;
+    background-color: white;
+    z-index: 1;
+  
+    border: 1px solid grey;
+    width: 140px;
+    right: 0.5%;
+    border-radius: 5px;
+  }
+  
+  .menu > li {
+    margin: 0;
+    padding: 5px;
+    background-color: white;
+  }
+  
+  
+  .menu > li:hover {
+    background-color: lightgray;
+  }
+  .i-link{
+    width: 100%;
+    height: 100%;
+  }
+  .menu > li >a> button {
+    width: 100%;
+    height: 100%;
+    text-align: left;
+    background-color: white;
+    background: none;
+    color: inherit;
+    border: none;
+    padding: 5px;
+    margin: 0;
+    font: inherit;
+    cursor: pointer;
+  }
+  .menu > li > button {
+    width: 100%;
+    height: 100%;
+    text-align: left;
+    background-color: white;
+    background: none;
+    color: inherit;
+    border: none;
+    padding: 5px;
+    margin: 0;
+    font: inherit;
+    cursor: pointer;
+  }
+  .login-avatar{
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    padding: 0px 20px;
+}
+.avatar-img{
+    width:70px;
+    height:70px;
+    border-radius: 50%;
+    transform: translateY(10px);
+}
+.a-img{
+    width: 100%;
+    object-fit: cover;
+}
+.user_name{
+    font-size: 18px;
+    font-style: italic;
+}

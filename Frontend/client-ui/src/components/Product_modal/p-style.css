@@ -1,0 +1,144 @@
+.Product-conatiner{
+    padding: 20px 20px;
+    display: flex;
+    width: 100%;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.product-image-p{
+    display: flex;
+    width: 100%;
+    padding: 20px 20px;
+    flex-direction: row;
+    justify-content: center;
+    align-items: flex-start;
+}
+.p-image{
+    width: 220px;
+    height: 320px;
+    box-shadow: 1px 2px 4px 0px rgba(151, 151, 151, 0.75);
+    border: none;
+    border-radius: 5px;
+}
+.pp-img{
+    width:100%;
+    height: 320px;
+    object-fit: cover;
+    border: none;
+    border-radius: 5px;
+}
+.p-p{
+    padding: 10px 10px;
+    margin-left:100px;
+    
+
+}
+.p-buttons-set{
+    display: flex;
+    padding: 10px 10px;
+}
+.p-btn-bn{
+    background-color: white;
+    padding: 10px 20px;
+    border: 1px solid rgba(151, 151, 151, 0.75);
+    border-radius: 5px;
+    margin: 10px 10px;
+}
+.p-btn-atc{
+    background-color: rgb(243, 127, 127);
+    padding: 10px 20px;
+    border: 1px solid rgba(151, 151, 151, 0.75);
+    border-radius: 5px;
+    margin: 10px 10px;
+}
+.p-shipping-detail{
+    text-align: left;
+    padding: 10px 10px;
+    font-size: 20px;
+    margin-top: 30px;
+    color: green;
+}
+.p-s-d-d{
+    font-size: 15px;
+    margin-top:10px;
+    color: black;
+}
+.p-title{
+    font-size: 30px;
+    font-style: italic;
+    margin-bottom: 30px;
+}
+.t-p-sub{
+    font-style: normal;
+    font-size: 20px;
+}
+.p-subtitle{
+    margin: 5px 5px;
+    font-size: 20px;
+}
+.p-reviews{
+    margin: 10px 0px;
+    padding: 10px 10px;
+}
+.p-price{
+    font-size: 30px;
+    padding: 10px 10px;
+}
+.Mrp{
+    text-decoration: line-through;
+    font-style: italic;
+    color: red;
+}
+.product-details{
+    display: flex;
+    padding: 20px 100px;
+    flex-direction: column;
+    letter-spacing: 1px;
+    width: 100%;
+    
+}
+.p-d-heading{
+    margin-bottom: 30px;
+    font-size: 30px;
+    letter-spacing: 0px;
+    font-style: italic;
+}
+.p-d-p{
+    line-height: 30px;
+}
+.similar{
+    justify-content: center;
+    margin-left: 10%;
+}
+
+@media screen and (max-width:450px) {
+    .product-image-p{
+        display: flex;
+        width: 100%;
+        padding: 20px 20px;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+    .p-p{
+        padding: 10px 10px;
+        margin-left:0;
+    
+    }
+    .product-details{
+        display: flex;
+        padding: 2px 20px;
+        flex-direction: column;
+        letter-spacing: 1px;
+        width: 100%;
+        
+    }
+    .p-image{
+        
+        margin-bottom: 50px;
+    }
+    .similar{
+        margin-left: 0;
+    }
+}

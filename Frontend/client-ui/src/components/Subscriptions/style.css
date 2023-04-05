@@ -1,0 +1,13 @@
+.sub-cont{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+
+@media screen and (max-width:450px) {
+    .sub-cont{
+        flex-direction: column;
+    }
+}

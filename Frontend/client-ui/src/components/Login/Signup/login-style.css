@@ -1,0 +1,111 @@
+
+.login-form-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    max-width: 400px;
+    margin-top: 100px;
+    margin: 100px auto;
+    padding: 40px;
+    border-radius: 5px;
+    box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.1);
+    background-color: #fff;
+  }
+  
+  h1 {
+    margin-bottom: 70px;
+    font-size: 36px;
+    font-weight: 600;
+    color: #333;
+    text-align: center;
+  }
+  
+  form {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    margin-bottom: 30px;
+  }
+  
+  label {
+    display: block;
+    margin-bottom: 10px;
+    font-weight: 500;
+    color: #666;
+  }
+  
+  .login-form-container input[type='text'],
+  input[type='password'] {
+    padding: 12px;
+    border: none;
+    border-radius: 5px;
+    background-color: #f6f6f6;
+    font-size: 16px;
+    color: #333;
+    margin-bottom: 20px;
+    border: none;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+    outline: none;
+  }
+  
+  .login-button {
+    background-color: #0077cc;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    padding: 12px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.2s ease-in-out;
+  }
+  
+  .login-button:hover {
+    background-color: #005c99;
+  }
+  
+  .login-options {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  hr {
+    border: none;
+    border-top: 1px solid #ccc;
+    width: 100%;
+    margin-bottom: 15px;
+  }
+  
+  .social-login-icons {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+    
+  }
+  
+  .social-login-icons a{
+    text-decoration: none;
+    font-size: 20px;
+    margin: 0px 10px;
+    cursor: pointer;
+  }
+  
+  @media screen and (max-width:450px) {
+    .login-form-container{
+        padding:20px;
+        max-width: 300px;
+    }
+    form {
+        margin-bottom: 20px;
+    }
+    h1{
+        margin-bottom: 40px;
+        font-size: 25px;
+    }
+    hr{
+        margin-bottom: 10px;
+    }
+    .social-login-icons {
+        margin-top: 10px;
+    }
+  }

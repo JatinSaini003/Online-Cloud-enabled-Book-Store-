@@ -5,6 +5,8 @@
     margin-right: 30px;
     white-space: nowrap;
     padding: 20px 0;
+    border:0;
+    border-top: 1px solid rgba(0,0,0,.1);
   }
  
 
@@ -23,15 +25,18 @@
   
   .item {
     display: inline-block;
-    width: 200px;
-    height: 300px;
-    
+    width: 205px;
+    height: 320px;
+    padding: 1px;
     margin-right: 20px;
+    
     transition: transform 0.3s ease-in-out;
   }
   
   .item:hover {
     border: 1px solid black;
+    border-radius: 5px;
+    
   }
   .item .img-cont{
     width: 198px;
@@ -63,6 +68,21 @@
     padding: 0 10px;
     color: red;
   }
+  .item-btn{
+    text-align: center;
+    position: relative;
+    bottom: 50px;
+  }
+  .i-btn{
+    padding: 10px 20px;
+    background-color: white;
+    border: none;
+    border-radius: 5px;
+    font-weight: bold;
+   opacity: 1;
+  }
+ 
+  
 
   .arrow-container{
     width:100%;
@@ -95,5 +115,11 @@
   .arrow.right {
     top:-12.85rem;
     right: -100%;
+  }
+
+  @media screen and (max-width:450px) {
+    .arrow{
+      display: none;
+    }
   }
   
