@@ -1,29 +1,29 @@
-import logo from './logo.svg';
+// import logo from './logo.svg';
 import './App.css';
-import Navbar from './components/Navbar/toggle_Navbar/Navbar';
+// import Navbar from './components/Navbar/toggle_Navbar/Navbar';
 import Header from './components/Navbar/Current_Nav/header';
 import Hero from './components/Heropage/Hero';
 import LoginForm from './components/Login/Signup/login';
 import SignupForm from './components/Login/Signup/signup';
 import Nav from './components/Navbar/New_nav/nav';
-import { Route,Routes,Router } from 'react-router-dom';
+import { Route, Routes } from 'react-router-dom';
 import { useState } from 'react';
 import Footer from './components/Footer/Footer';
 import Product from './components/Product_modal/Product';
-import E_books from './components/E-books';
+import Ebooks from './components/E-books/index';
 import SubCards from './components/Subscriptions';
 import Publication from './components/Publication';
 import Account from './components/User/Account';
 import SellerPage from './components/SellerPage/SellerPage';
 function App() {
- const[login,setLogin]=useState(true)
- const handleLogin=()=>{
-  setLogin(!login)
- }
+  const [login, setLogin] = useState(false)
+  const handleLogin = () => {
+    setLogin(!login)
+  }
   return (
     <div className="App">
-      <Nav login={login}/>
-      <Header login={login} handleLogin={handleLogin}/>
+      <Nav login={login} />
+      <Header login={login} handleLogin={handleLogin} />
       <Routes>
         <Route path='/' element={<Hero/>}/>
         <Route path='/login' element={<LoginForm/>}/>
@@ -35,9 +35,9 @@ function App() {
         <Route path="/account/:id" element={<Account/>}/>
         <Route path="/seller/:id" element={<SellerPage/>}/>
       </Routes>
-      <Footer/>
-      
-      
+      <Footer />
+
+
     </div>
   );
 }
