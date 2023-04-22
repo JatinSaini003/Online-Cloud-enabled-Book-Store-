@@ -1,0 +1,118 @@
+.spage-container{
+    padding: 50px;
+}
+.sp-cont{
+    margin: 10px;
+    padding-left: 30px;
+    padding-right: 30px;
+    display: flex;
+    flex-direction: column;
+
+}
+.sp-heading{
+    font-size: 40px;
+    padding-left: 30px;
+    margin-bottom: 5px;
+    padding: 10px;
+}
+.sp-line{
+    border-bottom: 2px solid black;
+    height: 10px;
+    margin: 10px;
+}
+.sp-form-div{
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+    padding: 30px;
+    margin:30px;
+}
+.sp-form-container{
+    border:1px solid black;
+    border-radius: 15px;
+    height: 600px;
+    width: 80%;
+    
+}
+.sp-form{
+    display:flex;
+    flex-direction: row;
+}
+.sp-image-cont{
+    display: flex;
+    width:22%;
+    height: 598px;
+    border-right: 1px solid black;
+    -webkit-border-top-left-radius: 17px;
+    -webkit-border-bottom-left-radius: 17px;
+    -moz-border-radius-topleft: 17px;
+    -moz-border-radius-bottomleft: 17px;
+    border-top-left-radius: 17px;
+    border-bottom-left-radius: 17px;
+    justify-content: center;
+    align-items: center;
+    background-color: aqua;
+    position: relative;
+    z-index: -2px;
+}
+.sp-form-image{
+    height: 100px;
+    width:100px
+}
+.sp-img{
+    width: 100%;
+    object-fit: cover;
+}
+.formbold-main-wrapper{
+    padding: 30px;
+}
+.formbold-form-wrapper{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+.formbold-mb-5{
+    padding: 20px;
+}
+.sp-form-label{
+    font-size: 20px;
+    
+}
+.formbold-form-input{
+    width: 400px;
+    padding: 10px;
+
+}
+.sp-submit-container{
+    width:80%;
+    left:20%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+    position: relative;
+    bottom: 7rem;
+}
+.sp-form-button{
+    padding: 10px 50px 10px 50px;
+    font-size: 20px;
+    border: none;
+    border-radius: 20px;
+    background-color: antiquewhite;
+    transition: .2s all ease-in-out
+}
+.sp-form-button:hover{
+    background-color: black;
+    color: white;
+}
+.sp-file-upload{
+    margin: 5px;
+    margin-top: 20px;    
+    margin-left: 20px;
+    
+}
+.sp-form-label-up{
+    margin-bottom: 10px;
+    font-size: 20px;
+    padding: 10px;
+}

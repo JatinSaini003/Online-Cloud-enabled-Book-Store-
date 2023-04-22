@@ -7,7 +7,7 @@ from app import db
 ma=Marshmallow(app)
 class Address(db.Model):
     id=db.Column(db.Integer,primary_key=True)
-    user_id=db.Column(db.Integer,db.ForeignKey('user.id'))
+    user_id=db.Column(db.Integer)
     Address=db.Column(db.String)
     pincode=db.Column(db.Integer)
     City=db.Column(db.String)

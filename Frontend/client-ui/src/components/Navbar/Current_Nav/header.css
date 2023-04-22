@@ -8,7 +8,11 @@
     justify-content: space-between;
     display: flex;
     align-items: center;
+<<<<<<< HEAD
+    height: 50px;
+=======
     height: 60px;
+>>>>>>> 03455fec3337dd30d1049d663bbc6ca0dc8ce73f
 }
 
 .Title {
