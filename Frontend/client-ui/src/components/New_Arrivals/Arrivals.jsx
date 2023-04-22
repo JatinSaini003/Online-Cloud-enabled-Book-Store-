@@ -138,6 +138,7 @@ const HorizontalScroll = ({ heading,id }) => {
 
       <div className="items" id="items">
         {data.map((item) => (
+          <Link to='/book/1'>
           <div key={item.id} className="item">
             <div className="img-cont">
               <img src={item.image} alt={item.title} />
@@ -147,6 +148,7 @@ const HorizontalScroll = ({ heading,id }) => {
             <div className="author-name">{item.author}</div>
             <div className="price">{item.price}</div>
           </div>
+          </Link>
         ))}
       </div>
 
