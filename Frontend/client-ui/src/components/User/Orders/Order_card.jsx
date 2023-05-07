@@ -7,8 +7,8 @@ const Order_card=({id,dod,pay_mode,status})=>{
     const [b_data,setB_data] = useState()
     const[load,setLoad] =useState(false)
     var data_p = {}
-    const baseURL = `http://${process.env.REACT_APP_API_ADDRESS}:5000/book/${id}`
-    const baseURL_IMG = `http://${process.env.REACT_APP_API_ADDRESS}:5000/book_img/`
+    const baseURL = `${process.env.REACT_APP_API_ADDRESS}/book/${id}`
+    const baseURL_IMG = `${process.env.REACT_APP_API_ADDRESS}/book_img/`
     
     
     const fetch_data = async()=>{

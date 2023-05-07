@@ -8,8 +8,8 @@ const Order_list = ({userdata}) => {
   let {id} =useParams()
   const [data,setData] = useState()
   const [load,setLoad] =useState(false)
-  const baseURL = `http://${process.env.REACT_APP_API_ADDRESS}:5000/orders/${id}`
-  const baseURL_IMG = `http://${process.env.REACT_APP_API_ADDRESS}:5000/book_img/`
+  const baseURL = `${process.env.REACT_APP_API_ADDRESS}/orders/${id}`
+  const baseURL_IMG = `${process.env.REACT_APP_API_ADDRESS}/book_img/`
   let data_arr = []
   const fetch_data = async()=>{
     

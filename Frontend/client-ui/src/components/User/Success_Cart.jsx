@@ -41,7 +41,7 @@ const Success_Cart = ({item_list}) => {
             console.log(bo_data)
           },1000)
         data.item_list.map((value)=>{
-            axios.post(`http://${process.env.REACT_APP_API_ADDRESS}:5000/orders`,value).then((res)=>{
+            axios.post(`${process.env.REACT_APP_API_ADDRESS}/orders`,value).then((res)=>{
             console.log(res.data)
             if(res.data){
                 setState(true)

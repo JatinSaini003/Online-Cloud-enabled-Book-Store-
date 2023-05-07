@@ -40,9 +40,9 @@ const HorizontalScroll = ({ heading,id }) => {
   const [wait,setWait] = useState(false)
   var baseURL = ""
   if(heading==="Similar Products"){
-    baseURL = `http://${process.env.REACT_APP_API_ADDRESS}:5000/gen/${id}`
+    baseURL = `${process.env.REACT_APP_API_ADDRESS}/gen/${id}`
   }else{
-    baseURL = `http://${process.env.REACT_APP_API_ADDRESS}:5000/gen/${heading}`
+    baseURL = `${process.env.REACT_APP_API_ADDRESS}/gen/${heading}`
   }
   
   let newArray=[]
@@ -111,7 +111,7 @@ const HorizontalScroll = ({ heading,id }) => {
           <Link to={`/book/${item.Book_id}`} refresh="true" onClick={()=>navigate(`/book/${item.Book_id}`)}>
           <div key={item.Book_id} className="item">
             <div className="img-cont">
-              <img src={`http://${process.env.REACT_APP_API_ADDRESS}:5000/book_img/${item.name.replaceAll(' ','_')}`} alt={item.name} />
+              <img src={`${process.env.REACT_APP_API_ADDRESS}/book_img/${item.name.replaceAll(' ','_')}`} alt={item.name} />
             </div>
 
             <div className="title">{short(item.name)}</div>

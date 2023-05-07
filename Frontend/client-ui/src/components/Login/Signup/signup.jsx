@@ -21,7 +21,7 @@ function SignupForm() {
       "email":email,
       "password":password
       }
-      const response = await axios.post(`http://${process.env.REACT_APP_API_ADDRESS}:5000/user`,data)
+      const response = await axios.post(`${process.env.REACT_APP_API_ADDRESS}/user`,data)
       console.log(response.data)
     console.log(`First Name: ${firstName}, Last Name: ${lastName}, Email: ${email},Username: ${username}, Password: ${password}`);
     navigate('/')
