@@ -1,14 +1,14 @@
-import React from 'react'
+import React,{useState,useEffect} from 'react'
 import "./dropdown.css"
 import image from '../../../assets/2.png'
 import { Link } from 'react-router-dom';
 const data = [
     {title:"Account" ,link:"/Account/"},
-    {title:"Orders" ,link:"/oders/"},
+    {title:"Orders" ,link:"/orders/"},
     {title:"Cart" ,link:"/cart/"},
     {title:"Help" ,link:"/help"}
 ]
-const Dropdown = ({book_svg,handleLogin}) => {
+const Dropdown = ({book_svg,handleLogin,userdata}) => {
     
     const [open, setOpen] = React.useState(false);
 
@@ -16,7 +16,11 @@ const Dropdown = ({book_svg,handleLogin}) => {
       setOpen(!open);
     };
     let id=1;
-  
+    const [user,setUser] = useState({})
+    useEffect(()=>{
+    setUser(JSON.parse(window.localStorage.getItem('userdata')))
+    console.log(user.username)
+  },[])
     return (
       <div className="dropdown">
         
@@ -25,14 +29,14 @@ const Dropdown = ({book_svg,handleLogin}) => {
           <img src={image} className="a-img"/>
         </div>
         <div className="user_name">
-          Jatin
+          {user.username}
       </div> </div></div>
         {open ? (
           <ul className="menu">
             {data.map((value,key)=>(
                 
                     <li className="menu-item">
-                        <Link to={`${value.link}${id}`} className="i-link">
+                        <Link to={`${value.link}${id}`} className="i-link" onClick={handleOpen}>
                         <button>
                             {value.title}
                             </button>

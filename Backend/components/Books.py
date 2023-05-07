@@ -82,7 +82,17 @@ def add_books():
     db.session.commit()
     return book_schema.jsonify(new_Book)
 
+@app.route('/gen/<gen>',methods=['GET'])
+def get_gen(gen):
+    new_gen = gen.lower()
+    all_books = Books.query.filter_by(genre = new_gen)
+    result = book_schemas.dump(all_books)
+    return jsonify(result)
 
+@app.route('/book/<id>',methods=['GET'])
+def get_book(id):
+    book_info = Books.query.filter_by(Book_id=id).first()
+    return book_schema.jsonify(book_info)
 
 
 @app.route('/books',methods=['GET'])
@@ -102,5 +112,13 @@ def get_img(name):
         db.session.commit()
         return 'Img uploaded' ,200
     else:
-        img_data = Img.query.filter_by(name = name).first()
+        
+
+        new_name = name.replace(" ","_")
+        new_name = new_name.replace("'","")
+        if new_name[len(new_name)-1] == "_":
+            new_name = new_name[:-1]
+        
+        img_data = Img.query.filter_by(name = new_name).first()
         return Response(img_data.img,mimetype=img_data.mimetype)
+

@@ -10,7 +10,7 @@ const menu_items = [{name:"Home",link:'/'}, {name:"E-books",link:'/ebook'}, {nam
 
 
 
-const Header = ({login,handleLogin}) => {
+const Header = ({login,handleLogin,userdata}) => {
   return (
     <div className="header-container">
       <div className="Title">
@@ -31,7 +31,7 @@ const Header = ({login,handleLogin}) => {
       </div>
       {login?<>
         <div className="">
-        <Dropdown book_svg={book_svg} handleLogin={handleLogin}/>
+        <Dropdown book_svg={book_svg} handleLogin={handleLogin} userdata={userdata}/>
   </div>
       
 

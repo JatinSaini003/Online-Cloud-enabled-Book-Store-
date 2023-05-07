@@ -41,7 +41,7 @@ const SellerPage = () => {
             "qty":qty
         }
          try{
-            const response = await axios.post("http://127.0.0.1:5000/add_books" ,form_data);
+            const response = await axios.post(`http://${process.env.REACT_APP_API_ADDRESS}:5000/add_books` ,form_data);
             console.log(response.data)
             changeHandler()
 
@@ -57,7 +57,7 @@ const SellerPage = () => {
         data.append('file',img)
         
         try{
-            const response = await axios.post(`http://127.0.0.1:5000/book_img/${name}`,data);
+            const response = await axios.post(`http://${process.env.REACT_APP_API_ADDRESS}:5000/book_img/${name}`,data);
             submitForm()
             console.log(response.data)
 
@@ -72,7 +72,7 @@ const SellerPage = () => {
     <div className='spage-container'>
         <div className='sp-cont'>
             <div className='sp-heading'>
-                Seller{"'s"} page.
+                Seller{"'s"} page. {`${process.env.REACT_APP_API_ADDRESS}`}
             </div>
             <div className='sp-line'>
 

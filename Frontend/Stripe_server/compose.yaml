@@ -1,0 +1,10 @@
+version: '2'
+services:
+  stripe:
+    image: jatin1008/stripe_api
+    environment:
+      - STRIPE_PRIVATE_KEY=sk_test_51MboKfSHMkXtDqYLEjmI4iuH9WzAOPitMB3kvqZWttELHTpv16qCLfHBW8GWDOxTyjeetFuBBvWknkzGB4ir7E2700IVq2G6vY
+      - CLIENT_URL=http://192.168.0.1:3000
+      - API_ADDRESS=192.168.0.116
+    ports:
+      - 3001:3001

@@ -1,8 +1,10 @@
 import React, { useState } from 'react';
 import { FaFacebook, FaGoogle, FaGithub } from 'react-icons/fa';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import "./signup-style.css"
+import axios from 'axios';
 function SignupForm() {
+  const navigate = useNavigate()
   const [firstName, setFirstName] = useState('');
   const [lastName, setLastName] = useState('');
   const [email, setEmail] = useState('');
@@ -10,9 +12,19 @@ function SignupForm() {
   const [c_password,setC_password] = useState('');
   const [username,setUsername] = useState('')
     const[click,setClick] = useState(false)
-  const handleSubmit = (event) => {
+  const handleSubmit = async(event) => {
     event.preventDefault();
+    const data = {
+      "username":username,
+      "first_name":firstName,
+      "Last_name":lastName,
+      "email":email,
+      "password":password
+      }
+      const response = await axios.post(`http://${process.env.REACT_APP_API_ADDRESS}:5000/user`,data)
+      console.log(response.data)
     console.log(`First Name: ${firstName}, Last Name: ${lastName}, Email: ${email},Username: ${username}, Password: ${password}`);
+    navigate('/')
   };
   const handleClick = ()=>{
     setClick(!click)

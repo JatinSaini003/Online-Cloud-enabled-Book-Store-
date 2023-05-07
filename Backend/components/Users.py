@@ -31,6 +31,13 @@ users_schema=UserSchema(many=True)
 
 db.create_all()
 
+@app.route('/user/<user>',methods=['GET'])
+def get_user(user):
+    user=User.query.filter_by(username=user)
+    result = users_schema.dump(user)
+    return jsonify(result[0])
+    #return user_schema.jsonify(user)
+
 @app.route('/user',methods=['POST','GET'])
 def add():
     if request.method=="POST":
@@ -49,8 +56,3 @@ def add():
         result= users_schema.dump(all_user)
         return jsonify(result)
     
-@app.route('/user/<username>',methods=['GET'])
-def get_user(username):
-    user=User.query.filterby(username=username)
-
-    return user_schema.jsonify(user)

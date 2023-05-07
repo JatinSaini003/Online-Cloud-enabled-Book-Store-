@@ -4,8 +4,15 @@ import book_svg from "../../../assets/2.png"
 import { RxCross2  } from 'react-icons/rx'
 import {} from 'framer-motion'
 import { Link } from 'react-router-dom';
+import { useEffect } from 'react'
+import { useState } from 'react'
 const menu_items = [{name:"Home",link:'/'}, {name:"E-books",link:'/ebook'}, {name:"Subscription",link:"/sub"}, {name:"Publication",link:'/publications'}, {name:"About us",link:'/about_us'}];
-const Navbar = ({toggle,open,login}) => {
+const Navbar = ({toggle,open,login,handleLogin,userdata}) => {
+  const [user,setUser] = useState({})
+  useEffect(()=>{
+    setUser(JSON.parse(window.localStorage.getItem('userdata')))
+    console.log(user.username)
+  },[])
   return (
     <div className={open?'Toggle-nav':'Toggle-nav close'}>
       {open?<><div className="close-icon">
@@ -22,23 +29,38 @@ const Navbar = ({toggle,open,login}) => {
         </div>
         <span className='Line-sepreator'></span>
         {login?<>
+        <Link to={`/account/${userdata?.id}`}>
       <div className="login-avatar">
         <div className="avatar-img">
           <img src={book_svg} className="a-img"/>
         </div>
         <div className="t-user_name">
-          Jatin
+          {user.username}
+          
         </div>
+        
+        
+        
       </div>
-      </>: <div className="t-nav-buttons">
+      </Link>
+      <div className='t-nav-buttons-signout'>
+      <Link to="/" onCl><div className="t-but" onClick={handleLogin}>
+            Signout
+        </div></Link>
+        </div>
+      
+      </>
+      : <div className="t-nav-buttons">
         <Link to="/login">
         <div className="t-but">
             Login
         </div>
         </Link>
-        <Link to="/signup"><div className="t-but">
-            Signup
+        
+      <Link to="/register" ><div className="t-but" onClick={handleLogin}>
+            SignUp
         </div></Link>
+        
         
       </div>}
        

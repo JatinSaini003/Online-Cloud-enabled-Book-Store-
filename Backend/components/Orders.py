@@ -28,9 +28,10 @@ orders_schema=orderSchema(many=True)
 
 db.create_all()
 
-@app.route('/orders/<book_id>',methods=['POST','GET'])
-def orders(book_id):
+@app.route('/orders',methods=['POST','GET'])
+def orders():
     if request.method=='POST':
+        book_id=request.json['book_id']
         user_id=request.json['user_id']
         status=request.json['status']
         dod=request.json['dod']
@@ -41,7 +42,7 @@ def orders(book_id):
 
         return order_schema.jsonify(new_order)
     else:
-        all_orders = Orders.query.filterby(book_id=book_id)
+        all_orders = Orders.query.filter_by(book_id=book_id)
 
         result = orders_schema.dump(all_orders)
 
@@ -49,6 +50,6 @@ def orders(book_id):
 
 @app.route('/orders/<user_id>',methods=['GET'])
 def get_orders(user_id):
-    all_orders = Orders.query.filterby(user_id=user_id)
+    all_orders = Orders.query.filter_by(user_id=user_id)
     result=orders_schema.dump(all_orders)
     return jsonify(result)
