@@ -4,17 +4,17 @@ import image1 from '../../assets/box.svg'
 import image2 from '../../assets/Payment.svg'
 import image3 from '../../assets/Help.svg'
 import image4 from '../../assets/Cart.svg'
-import { Link } from 'react-router-dom'
+import { Link, useParams } from 'react-router-dom'
 
 const data = [
-    {img:image1,title:"My Orders" ,link:"/oders/"},
+    {img:image1,title:"My Orders" ,link:"/orders/"},
     {img:image4,title:"Cart" ,link:"/cart/"},
     {img:image2,title:"Payments" ,link:"/payments/"},
     {img:image3,title:"Help & Support" ,link:"/help"}
 ]
-const Account = ({props}) => {
+const Account = () => {
     //const id =props.pramas.id
-    let id=1
+    let {id} = useParams()
   return (
     <div className='Account-container'>
         <h1 className='Page-title'>

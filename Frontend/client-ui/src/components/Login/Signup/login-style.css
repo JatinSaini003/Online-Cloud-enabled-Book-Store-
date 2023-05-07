@@ -20,7 +20,7 @@
     text-align: center;
   }
   
-  form {
+  .form {
     display: flex;
     flex-direction: column;
     width: 100%;
@@ -95,7 +95,7 @@
         padding:20px;
         max-width: 300px;
     }
-    form {
+    .form {
         margin-bottom: 20px;
     }
     h1{

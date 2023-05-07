@@ -1,0 +1,94 @@
+.o-container{
+    padding: 10px;
+    margin: 10px;
+    height:100%;
+    width:100%;
+    
+    
+}
+.o-heading{
+    font-size: 30px;
+    font-style: italic;
+    padding: 10px;
+    margin-left: 10px;
+}
+
+.o-product{
+    margin-top: 4rem ;
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    align-items: center;
+}
+.o-product-box{
+    display: flex;
+    align-items: center;
+    border-top: 1px solid black;
+    border-bottom: 1px solid black;
+    padding: 10px;
+    padding-left: 6rem;
+    padding-right: 6rem;
+    padding-top: 3rem;
+    padding-bottom: 3rem;
+    
+}
+.o-product-image{
+    width: 5rem;
+    height: 5rem;
+    border: none;
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+
+}
+.o-p-img{
+    width: 100%;
+    object-fit: cover;
+}
+.o-product-details{
+    margin-left: 3rem;
+    padding: 2rem;
+    font-size: medium;
+}
+.o-product-name{
+    font-size: 1.2rem;
+    font-style: italic;
+    color: black;
+    
+}
+.o-p-auth{
+    margin-bottom: 12px;
+    font-size: 1rem;
+    font-style: italic;
+}
+.o-product-price{
+    color: gray;
+    margin-bottom: 5px;
+}
+.o-product-date{
+    font-style: italic;
+}
+.o-product-status{
+    text-transform: capitalize;
+}
+.o-product-pay_m{
+    text-transform: capitalize;
+}
+
+.o-product-button-cont{
+    margin-top: 4rem;
+    padding: 1rem;
+}
+.o-product-btn{
+    padding: 10px 20px 10px 20px;
+    border: 1px solid black;
+    border-radius: 5px;
+    background-color: white;
+    transition: .2s all ease-in-out;
+}
+.o-product-btn:hover{
+    background-color: black;
+    color: white;
+
+}
