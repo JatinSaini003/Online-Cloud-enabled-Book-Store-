@@ -17,8 +17,8 @@ const Product = ({userdata}) => {
 
   const [b_data,setB_data] = useState(null)
   
-  const baseURL = `http://${process.env.REACT_APP_API_ADDRESS}:5000/book/${id}`
-  const baseURL_IMG = `http://${process.env.REACT_APP_API_ADDRESS}:5000/book_img`
+  const baseURL = `${process.env.REACT_APP_API_ADDRESS}/book/${id}`
+  const baseURL_IMG = `${process.env.REACT_APP_API_ADDRESS}/book_img`
   const [load,setLoad] = React.useState(false)
   const fetch_data = async()=>{
     try{

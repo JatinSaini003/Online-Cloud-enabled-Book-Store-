@@ -20,7 +20,7 @@ const Checkout = () => {
             
             
         
-        await axios.post(`http://${process.env.REACT_APP_STRIPE_ADDRESS}/create-checkout-session`,data).then((res)=>{
+        await axios.post(`${process.env.REACT_APP_STRIPE_ADDRESS}/create-checkout-session`,data).then((res)=>{
             console.log(res.data)
             setTimeout(()=>{
                 window.location.replace(res.data.url)

@@ -10,8 +10,8 @@ const Orders = ({userdata}) => {
   let {id} =useParams()
   const [data,setData] = useState()
   const [load,setLoad] =useState(false)
-  const baseURL = `http://${process.env.REACT_APP_API_ADDRESS}:5000/book/${id}`
-  const baseURL_IMG = `http://${process.env.REACT_APP_API_ADDRESS}:5000/book_img/`
+  const baseURL = `${process.env.REACT_APP_API_ADDRESS}/book/${id}`
+  const baseURL_IMG = `${process.env.REACT_APP_API_ADDRESS}/book_img/`
   const fetch_data = async()=>{
     
     try{

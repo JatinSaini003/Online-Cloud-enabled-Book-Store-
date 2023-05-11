@@ -23,7 +23,7 @@ function LoginForm({login,handleLogin,userdata,get_User,setUser,setUserdata}) {
   const Fetch_user = async()=>{
       
     try{
-      const response = await axios.get(`http://${process.env.REACT_APP_API_ADDRESS}:5000/user/${username}`)
+      const response = await axios.get(`${process.env.REACT_APP_API_ADDRESS}/user/${username}`)
         console.log(`${username} ${password}`)
         user = await response.data
         console.log(user.password)

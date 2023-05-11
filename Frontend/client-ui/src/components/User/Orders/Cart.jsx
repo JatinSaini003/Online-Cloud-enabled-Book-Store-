@@ -20,8 +20,8 @@ const Cart = ({set_List_Item,item_list}) => {
   let book_data = []
   const [message,setMessage] = ('')
   const [empty,setEmpty] = useState(true)
-  const baseURL = `http://${process.env.REACT_APP_API_ADDRESS}:5000`
-  const baseURL_B = `http://${process.env.REACT_APP_API_ADDRESS}:5000/book/`
+  const baseURL = `${process.env.REACT_APP_API_ADDRESS}`
+  const baseURL_B = `${process.env.REACT_APP_API_ADDRESS}/book/`
   const fetch_data = async()=>{
     try{
       axios.get(`${baseURL}/cart/${id}`).then(async(response) => {
@@ -92,7 +92,7 @@ const Cart = ({set_List_Item,item_list}) => {
       setLoad_2(true)
       console.log('checkout_data',bo_d)
   
-  await axios.post(`http://${process.env.REACT_APP_STRIPE_ADDRESS}/create-checkout-session-cart`,bo_d).then((res)=>{
+  await axios.post(`${process.env.REACT_APP_STRIPE_ADDRESS}/create-checkout-session-cart`,bo_d).then((res)=>{
       console.log(res.data)
       setTimeout(()=>{
           const temp = res.data.item_list
