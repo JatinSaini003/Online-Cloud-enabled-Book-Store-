@@ -4,3 +4,4 @@ A website where customers may buy products or services is known as an online sto
 Add data for the api
 go to seller/1 page and fill all the columns
 immediately
+Website Address : http://20.207.80.171:3000/
