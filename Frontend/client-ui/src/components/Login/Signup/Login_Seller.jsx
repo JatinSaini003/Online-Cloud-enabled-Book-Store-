@@ -1,11 +1,10 @@
-import React from 'react';
-import {useState} from 'react';
-
+import React, { useState } from 'react';
+import { FaFacebook, FaGoogle, FaGithub } from 'react-icons/fa';
+import "./login-style.css"
 import axios from 'axios';
 import { Link, useNavigate } from 'react-router-dom';
-import "./login-style.css"
-function LoginForm({login,handleLogin,userdata,get_User,setUser,setUserdata}) {
-  const navigate = useNavigate()
+const Login_Seller = ({login,handleLogin,userdata,get_User,setUser,setUserdata}) => {
+    const navigate = useNavigate()
   
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
@@ -23,7 +22,7 @@ function LoginForm({login,handleLogin,userdata,get_User,setUser,setUserdata}) {
   const Fetch_user = async()=>{
       
     try{
-      const response = await axios.get(`http://${process.env.REACT_APP_API_ADDRESS}:5000/user/${username}`)
+      const response = await axios.get(`http://${process.env.REACT_APP_API_ADDRESS}:5000/user-seller/${username}`)
         console.log(`${username} ${password}`)
         user = await response.data
         console.log(user.password)
@@ -56,11 +55,10 @@ function LoginForm({login,handleLogin,userdata,get_User,setUser,setUserdata}) {
       handleLogin()
     
   }
-
   return (
     <div className="l-cont">
     <div className="login-form-container">
-      <h1>Login</h1>
+      <h1>Login Seller{"'"}s</h1>
       <div className="form">
         <label>
           Username</label>
@@ -75,13 +73,13 @@ function LoginForm({login,handleLogin,userdata,get_User,setUser,setUserdata}) {
       <div className="login-options">
         {message}
         <hr />
-        <Link to="/signup_customer">
-        <span>Or New Customer?</span>
+        <Link to="/signup_seller">
+        <span>Or New Seller?</span>
         {"   "}SignUp NOW!</Link>
       </div>
     </div>
     </div>
-  );
+  )
 }
 
-export default LoginForm;
+export default Login_Seller

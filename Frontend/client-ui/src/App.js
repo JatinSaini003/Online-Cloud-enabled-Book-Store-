@@ -24,7 +24,16 @@ import Success from './components/User/Success';
 import Cancel from './components/User/Cancel';
 import Order_list from './components/User/Orders/Order_list';
 import Success_Cart from './components/User/Success_Cart';
+import Login_Page from './components/Pages/Login_Page';
+import Login_Seller from './components/Login/Signup/Login_Seller';
+import Signup_Seller from './components/Login/Signup/Signup_Seller';
+import Signup_page from './components/Pages/Signup_page';
+
+
+
 function App() {
+
+
   const navigate = useNavigate()
   const [login, setLogin] = useState(false)
   const [userdata,setUserdata] = useState(null)
@@ -46,7 +55,16 @@ function App() {
   }
   useEffect(()=>{
     setLogin(window.localStorage.getItem('login'))
-    setUserdata(JSON.parse(window.localStorage.getItem('userdata')))
+    if(JSON.parse(window.localStorage.getItem('userdata'))===null){
+      setLogin(false)
+      window.localStorage.setItem('login',false)
+    }
+    if(login){
+      setUserdata(JSON.parse(window.localStorage.getItem('userdata')))
+    }
+
+    
+    
    
     
     
@@ -58,14 +76,17 @@ function App() {
       <Header login={login} handleLogin={handleLogin} userdata={userdata} />
       <Routes>
         <Route path='/' element={<Hero/>}/>
-        <Route path='/login' element={<LoginForm login={login}  handleLogin={handleLogin} userdata={userdata}  setUser={setUser}  setUserdata={setUserdata} />}/>
-        <Route path="/signup" element={<SignupForm/>}/>
+        <Route path='/login_customer' element={<LoginForm login={login}  handleLogin={handleLogin} userdata={userdata}  setUser={setUser}  setUserdata={setUserdata} />}/>
+        <Route path="/signup" element={<Signup_page/>}/>
+        <Route path="/signup_customer" element={<SignupForm/>}/>
+        <Route path="/signup_seller" element={<Signup_Seller/>}/>
+
         <Route path="/book/:id" element={<Product userdata={userdata}/>}/>
         <Route path="/ebook" element={<E_books/>}/>
         <Route path="/sub" element={<SubCards/>}/>
         <Route path="/publications" element={<Publication/>}/>
-        <Route path="/account/:id" element={<Account/>}/>
-        <Route path="/seller/:id" element={<SellerPage/>}/>
+        <Route path="/account/:id" element={<Account userdata={userdata}/>}/>
+        <Route path="/seller/:id" element={<SellerPage userdata={userdata}/>}/>
         <Route path="/order/:id" element={<Orders userdata={userdata}/>}/>
         <Route path="/cart/:id" element={<Cart userdata={userdata} item_list={item_list} set_List_Item={set_Item_List}/>}/>
         <Route path="/checkout_session" element={<Checkout/>}/>
@@ -73,6 +94,8 @@ function App() {
         <Route path="/success_cart" element={<Success_Cart item_list={item_list}/>}/>
         <Route path="/cancel" element={<Cancel/>}/>
         <Route path="/orders/:id" element={<Order_list/>}/>
+        <Route path="/login" element={<Login_Page/>}/>
+        <Route path="/login_seller" element={<Login_Seller login={login}  handleLogin={handleLogin} userdata={userdata}  setUser={setUser}  setUserdata={setUserdata}/>}/>
       </Routes>
       <Footer />
 

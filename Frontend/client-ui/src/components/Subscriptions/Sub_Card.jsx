@@ -1,7 +1,7 @@
 import React from 'react'
 import { CCard,CCardImage,CCardTitle,CCardBody,CButton,CCardText } from '@coreui/react'
 import './cardStyle.css'
-const Sub_Card = ({ReactImg}) => {
+const Sub_Card = ({ReactImg,name,Price,details}) => {
   return (
     <div className='Sub-card-cont'>
         {/*<CCard style={{ width: '18rem' }}>
@@ -18,13 +18,13 @@ const Sub_Card = ({ReactImg}) => {
         <img src={ReactImg} alt="image" className='s-img'/>
     </div>
     <div className="s-title">
-        Basic
+        {name}
     </div>
     <div className="s-sub-title-price">
-        $9
+    ₹{Price}
     </div>
     <div className="s-sub-title">
-        Go now For week with Basic subscription Pack.
+        {details}
     </div>
     <div className="s-btn">
         <button className='s-button'>Buy Now</button>

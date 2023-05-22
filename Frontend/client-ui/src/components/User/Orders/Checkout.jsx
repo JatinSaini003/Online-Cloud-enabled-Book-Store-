@@ -2,6 +2,7 @@ import axios from 'axios'
 import React from 'react'
 import { useEffect } from 'react'
 import { useLocation, useNavigate } from 'react-router-dom'
+import { Loader } from  'rsuite'
 
 const Checkout = () => {
     const location = useLocation()
@@ -20,7 +21,7 @@ const Checkout = () => {
             
             
         
-        await axios.post(`${process.env.REACT_APP_STRIPE_ADDRESS}/create-checkout-session`,data).then((res)=>{
+        await axios.post(`http://${process.env.REACT_APP_STRIPE_ADDRESS}:3001/create-checkout-session`,data).then((res)=>{
             console.log(res.data)
             setTimeout(()=>{
                 window.location.replace(res.data.url)
@@ -30,11 +31,12 @@ const Checkout = () => {
     }
     useEffect(()=>{
         fetch_url()
-    })
+    },[])
   return (
-    <div>Checkout
-        <p>{queryParameters.get("user_id")}</p>
-        <p>{queryParameters.get("book_id")}</p>
+    <div>
+      <div className='loader-conatiner'>
+  <Loader/>
+  </div>
     </div>
   )
 }

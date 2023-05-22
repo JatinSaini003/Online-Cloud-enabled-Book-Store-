@@ -33,7 +33,12 @@
     font-weight: 500;
     color: #666;
   }
-  
+  .s-label .link{
+    margin-bottom: 2px;
+  }
+  .file-input{
+    margin-bottom: 20px;
+  }
   .signup-form-container input[type='text'],
   input[type='email'],
   input[type='password'] {

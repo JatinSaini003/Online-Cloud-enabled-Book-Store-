@@ -1,5 +1,6 @@
-FROM node
+FROM node:alpine3.17
 COPY . .
-RUN npm install
 EXPOSE 3000
-CMD ["npm","start"]
+RUN npm install --silent
+RUN npm install react-scripts -g --silent
+CMD [ "npm","start" ]

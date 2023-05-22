@@ -35,7 +35,7 @@ const Navbar = ({toggle,open,login,handleLogin,userdata}) => {
           <img src={book_svg} className="a-img"/>
         </div>
         <div className="t-user_name">
-          {user.username}
+        {String(user.username).replace('_seller','')}
           
         </div>
         
@@ -57,7 +57,7 @@ const Navbar = ({toggle,open,login,handleLogin,userdata}) => {
         </div>
         </Link>
         
-      <Link to="/register" ><div className="t-but" onClick={handleLogin}>
+      <Link to="/signup" ><div className="t-but" onClick={handleLogin}>
             SignUp
         </div></Link>
         
