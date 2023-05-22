@@ -25,7 +25,7 @@ const Saerch_Component = ({ name, price, author, id ,atb}) => {
       >
         <img
           class="object-cover w-30 rounded-t-lg h-30 md:h-auto md:rounded-none md:rounded-l-lg flex justify-center items-center"
-          src={`${process.env.REACT_APP_API_ADDRESS}/book_img/${name}`}
+          src={`http://${process.env.REACT_APP_API_ADDRESS}:5000/book_img/${name}`}
           alt=""
         />
         <div class="flex flex-col justify-between p-4 leading-normal max-w-sm">

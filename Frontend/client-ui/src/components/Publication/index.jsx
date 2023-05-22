@@ -16,7 +16,7 @@ const Publication = () => {
   }
   useEffect(()=>{
     setLoad(false)
-    axios.get(`${process.env.REACT_APP_API_ADDRESS}/books`).then((res)=>{
+    axios.get(`http://${process.env.REACT_APP_API_ADDRESS}:5000/books`).then((res)=>{
       let d = res.data
       console.log(d)
       setData(d)

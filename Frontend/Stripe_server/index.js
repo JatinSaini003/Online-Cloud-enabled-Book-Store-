@@ -14,10 +14,15 @@ const stripe = require('stripe')(process.env.STRIPE_PRIVATE_KEY)
 var items=[]
 
 const fetch_items = async()=>{
-    await axios.get(`http://${process.env.API_ADDRESS}:5000/books`).then(async (res)=>{
-        items = await res.data
-       
-    })
+    try{
+        await axios.get(`http://${process.env.API_ADDRESS}:5000/books`).then(async (res)=>{
+            items = await res.data
+            console.log(items)
+        })
+    }catch(err){
+        console.error(err)
+    }
+    
 }
 
 fetch_items()
@@ -25,9 +30,18 @@ fetch_items()
 var user = ""
 var book_id=""
 const link = []
+
+app.get("/",async(res,req)=>{
+    console.log("hello")
+    res.json(fetch_items())
+
+})
+
 app.post('/create-checkout-session',async (req,res)=>{
     console.log(req.body.item_list)
     try{
+        fetch_items()
+        console.log(`http://${process.env.API_ADDRESS}:5000/books`)
         const session = await stripe.checkout.sessions.create({
             payment_method_types: ['card'],
             mode: 'payment',
@@ -43,7 +57,7 @@ app.post('/create-checkout-session',async (req,res)=>{
                         currency: "inr",
                         product_data: {
                             name: storeItem[0].name,
-                            //images: [`http://127.0.0.1:5000/book_img/${storeItem[0].name}`]
+                           // images: [`http:${process.env.API_ADDRESS}:5000/book_img/${storeItem[0].name}`]
                         },
                         
                         unit_amount: storeItem[0].price*100
@@ -67,8 +81,8 @@ app.post('/create-checkout-session',async (req,res)=>{
             },
             
             
-            success_url: `${process.env.CLIENT_URL}/success?user_id=${user}&book_id=${book_id}`,
-            cancel_url: `${process.env.CLIENT_URL}/cancel`
+            success_url: `http://${process.env.CLIENT_URL}:3000/success?user_id=${user}&book_id=${book_id}`,
+            cancel_url: `http://${process.env.CLIENT_URL}:3000/cancel`
         })
         res.json({url: session.url})
     }catch(e){
@@ -80,6 +94,7 @@ app.post('/create-checkout-session-cart',async (req,res)=>{
     
     console.log(req.body.item_list)
     try{
+        fetch_items()
         link.splice(0,link.length)
         const session = await stripe.checkout.sessions.create({
             payment_method_types: ['card'],
@@ -97,7 +112,7 @@ app.post('/create-checkout-session-cart',async (req,res)=>{
                         currency: "inr",
                         product_data: {
                             name: storeItem[0].name,
-                            //images: [`http://127.0.0.1:5000/book_img/${storeItem[0].name}`]
+                           // images: [`http://${process.env.API_ADDRESS}:5000/book_img/${storeItem[0].name}`]
                         },
                         
                         unit_amount: storeItem[0].price*100
@@ -121,8 +136,8 @@ app.post('/create-checkout-session-cart',async (req,res)=>{
             },
             
             
-            success_url: `${process.env.CLIENT_URL}/success_cart?user_id=${user}`,
-            cancel_url: `${process.env.CLIENT_URL}/cancel`
+            success_url: `http://${process.env.CLIENT_URL}:3000/success_cart?user_id=${user}`,
+            cancel_url: `http://${process.env.CLIENT_URL}:3000/cancel`
         })
         res.json({url: session.url,item_list:link})
         

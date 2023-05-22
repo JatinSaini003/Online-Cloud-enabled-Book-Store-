@@ -1,10 +1,12 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import "./SellerPageStyle.css"
 import svg from '../../assets/books.svg'
 import axios from 'axios'
-const SellerPage = () => {
-    const[page,setPage] = useState(false)
-
+import { useNavigate } from 'react-router-dom'
+const SellerPage = ({userdata}) => {
+    const navigate = useNavigate()
+    const[seller,setSeller] = useState(false)
+    const[click,setClick] = useState(false)
     const[name,setName] = useState("")
     const[auth,setAuth] = useState("")
     const[rel,setRel] = useState("")
@@ -24,6 +26,9 @@ const SellerPage = () => {
         window.location.reload(true)
        
     }
+    const handleClick = ()=>{
+        setClick(!click)
+    }
 
     const submitForm = async(e) =>{
         const form_data={
@@ -41,7 +46,7 @@ const SellerPage = () => {
             "qty":qty
         }
          try{
-            const response = await axios.post(`${process.env.REACT_APP_API_ADDRESS}/add_books` ,form_data);
+            const response = await axios.post(`http://${process.env.REACT_APP_API_ADDRESS}:5000/add_books` ,form_data);
             console.log(response.data)
             changeHandler()
 
@@ -66,240 +71,91 @@ const SellerPage = () => {
         }
       };
 
-
+      useEffect(()=>{
+        const temp = JSON.parse(window.localStorage.getItem('userdata'))
+        if (String(temp.username).includes('_seller')){
+            setSeller(true)
+        }else{
+            setSeller(false)
+            navigate('/login')
+            alert("You are not a seller please login with seller account")
+        }
+      },[])
 
   return (
-    <div className='spage-container'>
-        <div className='sp-cont'>
-            <div className='sp-heading'>
-                Seller{"'s"} page. {`${process.env.REACT_APP_API_ADDRESS}`}
-            </div>
-            <div className='sp-line'>
+    <div className="signup-form-container">
+        <h1 className='s-h1'>book{"'"}s details</h1>
+        <div className="s-form">
+          
+          {!click?<>
+            <label className='s-label'>
+            Book Name:</label>
+            <input type="text" value={name} onChange={(event) => setName(event.target.value)} />
+          <label className='s-label'>
+            Book Release:</label>
+            <input type="text" value={rel} onChange={(event) => setRel(event.target.value)} />
+          <label className='s-label'>
+            Genre:</label>
+            <input type="text" value={gen} onChange={(event) => setGen(event.target.value)} />
+            <label className='s-label'>
+            Author:</label>
+            <input type="text" value={auth} onChange={(event) => setAuth(event.target.value)} />
+          
+          <label className='s-label'>
+            Quantity:</label>
+            <input type="text" value={qty} onChange={(event) => setQty(event.target.value)} />
+          
+          <label className='s-label'>
+            Book Description:</label >
+            <input type="email" value={desp} onChange={(event) => setDesp(event.target.value)} /></>
+            
+            
+            
+            :<>
 
-            </div>
-            <div className='sp-form-div'>
-            <div className='sp-form-container'>
-                <form className='sp-form'>
-                    <div className='sp-image-cont'>
-                    <div className='sp-form-image'>
-                        <img src={svg} alt='Book-SVG' className='sp-img'/>
-                        
-                    </div>
-                    </div>
-                    <div className='sp-form-content'>
-                    <div className="formbold-main-wrapper">
-  
-                        <div class="formbold-form-wrapper">
-                            {page?<>
-                                <div className="formbold-mb-5">
-                                <label className='sp-form-label'>
-                                Book Price:
-                                </label>
-                                <input
-                                type="text"
-                                name="Price"
-                                id="price"
-                                placeholder="Enter Book's price"
-                                value={price}
-                                onChange={(e)=>setPrice(e.target.value)}
-                                className="formbold-form-input"
-                                />
-                            </div>
-                            <div className="formbold-mb-5">
-                                <label className='sp-form-label'>
-                                Msrp:
-                                </label>
-                                <input
-                                type="text"
-                                name="msrp"
-                                id="msrp"
-                                value={msrp}
-                                onChange={(e)=>setMsrp(e.target.value)}
-                                placeholder="Enter book's msrp"
-                                className="formbold-form-input"
-                                />
-                            </div>
-                            
-                            <div className="formbold-mb-5">
-                                <label className='sp-form-label'>
-                                Book Rating:
-                                </label>
-                                <input
-                                type="text"
-                                name="rating"
-                                id="rate"
-                                value={rate}
-                                onChange={(e)=>setRate(e.target.value)}
-                                placeholder="Enter Book's Rating"
-                                className="formbold-form-input"
-                                />
-                            </div>
-                            <div className="formbold-mb-5">
-                                <label className='sp-form-label'>
-                                Edition:
-                                </label>
-                                <input
-                                type="text"
-                                name="edt"
-                                id="edt"
-                                value={edt}
-                                onChange={(e)=>setEdt(e.target.value)}
-                                placeholder="Enter Book's Edition"
-                                className="formbold-form-input"
-                                />
-                            </div>
-                            <div className="formbold-mb-5">
-                                <label className='sp-form-label'>
-                                Book{"'s"} Publisher:
-                                </label>
-                                <input
-                                type="text"
-                                name="publisher"
-                                id="publisher"
-                                value={pub}
-                                onChange={(e)=>setPub(e.target.value)}
-                                placeholder="Enter Book's Publisher"
-                                className="formbold-form-input"
-                                />
-                                
-                                
-                            </div>
-                            <div className="formbold-mb-5">
-                                <label className='sp-form-label'>
-                                Copy:
-                                </label>
-                                <input
-                                type="text"
-                                name="cpy"
-                                id="cpy"
-                                value={cpy}
-                                onChange={(e)=>setCpy(e.target.value)}
-                                placeholder="Enter Book's Copy"
-                                className="formbold-form-input"
-                                />
-                            </div>
-                            <div className="sp-file-upload">
-                                <label className="sp-form-label-up">
-                                Upload File
-                                </label>
-                                <input type="file" name="file" id="file" onChange={(e)=>setImg(e.target.files[0])}/>
-                            </div>
-
-                            </>:<>
-                            <div className="formbold-mb-5">
-                                <label className='sp-form-label'>
-                                Book Name:
-                                </label>
-                                <input
-                                type="text"
-                                name="name"
-                                id="name"
-                                value={name}
-                                onChange={(e)=>setName(e.target.value)}
-                                placeholder="Enter Book name"
-                                className="formbold-form-input"
-                                />
-                            </div>
-                            <div className="formbold-mb-5">
-                                <label className='sp-form-label'>
-                                Author:
-                                </label>
-                                <input
-                                type="text"
-                                name="author"
-                                id="author"
-                                value={auth}
-                                onChange={(e)=>setAuth(e.target.value)}
-                                placeholder="Enter Author's name"
-                                className="formbold-form-input"
-                                />
-                            </div>
-                            
-                            <div className="formbold-mb-5">
-                                <label className='sp-form-label'>
-                                Book Release:
-                                </label>
-                                <input
-                                type="text"
-                                name="release"
-                                id="release"
-                                value={rel}
-                                onChange={(e)=>setRel(e.target.value)}
-                                placeholder="Enter Book's Price"
-                                className="formbold-form-input"
-                                />
-                            </div>
-                            <div className="formbold-mb-5">
-                                <label className='sp-form-label'>
-                                Quantity:
-                                </label>
-                                <input
-                                type="text"
-                                name="qty"
-                                id="qty"
-                                value={qty}
-                                onChange={(e)=>setQty(e.target.value)}
-                                placeholder="Enter Book's Price"
-                                className="formbold-form-input"
-                                />
-                            </div>
-                            <div className="formbold-mb-5">
-                                <label className='sp-form-label'>
-                                Genre:
-                                </label>
-                                <input
-                                type="text"
-                                name="gen"
-                                id="gen"
-                                value={gen}
-                                onChange={(e)=>setGen(e.target.value)}
-                                placeholder="Enter Book's Genre"
-                                className="formbold-form-input"
-                                />
-                            </div>
-                            <div className="formbold-mb-5">
-                                <label className='sp-form-label'>
-                                Book{"'s"} Description:
-                                </label>
-                                
-                                <textarea id="description" name="descripttion" rows="4" cols="50" placeholder="Enter Book's description" className="formbold-form-input" value={desp} onChange={(e)=>setDesp(e.target.value)}>
-                                
-                                </textarea>
-                            </div>
-                            
-                            </>}
-                            
-
-                           
-                           
-                        </div>
-                         
-                        
-                        
-                        </div>
-                    </div>
-                    
-                </form>
-                {page?
-                            <>
-                            <div className='sp-submit-container'>
-                           
-                           <button className='sp-form-button' onClick={handleSubmit}>
-                               Submit
-                           </button>
-                           </div>
-                            </>:<>
-                            <div className='sp-submit-container'>
-                           
-                        <button className='sp-form-button' onClick={()=>setPage(!page)}>
-                            Next
-                        </button>
-                        </div>
-                            </>}
-            </div>
-            </div>
+            <label className='s-label'>
+            Book Price:</label>
+            <input type="text" value={price} onChange={(event) => setPrice(event.target.value)} />
+          <label className='s-label'>
+            Book Msrp:</label>
+            <input type="text" value={msrp} onChange={(event) => setMsrp(event.target.value)} />
+          <label className='s-label'>
+            Book Rating:</label>
+            <input type="text" value={rate} onChange={(event) => setRate(event.target.value)} />
+            <label className='s-label'>
+            Edition:</label>
+            <input type="text" value={edt} onChange={(event) => setEdt(event.target.value)} />
+          
+          <label className='s-label'>
+            Book{"'"}s Publisher:</label>
+            <input type="text" value={pub} onChange={(event) => setPub(event.target.value)} />
+          
+          <label className='s-label'>
+            Copy:</label >
+            <input type="email" value={cpy} onChange={(event) => setCpy(event.target.value)} />
+            <label className="s-label link">
+                Upload File
+            </label>
+            <input type="file" name="file" id="file" onChange={(e)=>setImg(e.target.files[0])} className='file-input'/>
+            </>}
+          
+          {click?<><button onClick={handleSubmit} className="signup-button
+          ">Submit</button>
+          {click?<div className="previous-btn" onClick={handleClick}>
+              Previous
+          </div>:<></>}
+          
+          
+          
+          </>:<><button className='signup-button' onClick={handleClick}>Next</button></>}
+          
+          
         </div>
-    </div>
+        <div className="login-options">
+          <hr />
+          
+        </div>
+      </div>
   )
 }
 

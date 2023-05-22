@@ -15,7 +15,6 @@ const Dropdown = ({book_svg,handleLogin,userdata}) => {
     const handleOpen = () => {
       setOpen(!open);
     };
-    let id=1;
     const [user,setUser] = useState({})
     useEffect(()=>{
     setUser(JSON.parse(window.localStorage.getItem('userdata')))
@@ -29,14 +28,14 @@ const Dropdown = ({book_svg,handleLogin,userdata}) => {
           <img src={image} className="a-img"/>
         </div>
         <div className="user_name">
-          {user.username}
+          {String(user.username).replace('_seller','')}
       </div> </div></div>
         {open ? (
           <ul className="menu">
             {data.map((value,key)=>(
                 
                     <li className="menu-item">
-                        <Link to={`${value.link}${id}`} className="i-link" onClick={handleOpen}>
+                        <Link to={`${value.link}${user.id}`} className="i-link" onClick={handleOpen}>
                         <button>
                             {value.title}
                             </button>

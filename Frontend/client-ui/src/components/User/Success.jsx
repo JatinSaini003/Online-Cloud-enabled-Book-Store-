@@ -20,20 +20,14 @@ const Success = () => {
             "pay_mode": "card"
         }
 
-        await axios.post(`${process.env.REACT_APP_API_ADDRESS}/orders`,data).then((res)=>{
-            console.log(res.data)
-            if(res.data){
-                setState(true)
-            }
-        })
+        const response = await axios.post(`http://${process.env.REACT_APP_API_ADDRESS}:5000/orders`,data)
+        navigate('/')
 
     }
 
     useEffect(()=>{
         order_done()
-        if(state){
-            navigate('/')
-        }
+        
     },[])
   return (
     <div className='videos-container'>

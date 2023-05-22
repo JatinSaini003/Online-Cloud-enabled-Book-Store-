@@ -21,7 +21,7 @@ function SignupForm() {
       "email":email,
       "password":password
       }
-      const response = await axios.post(`${process.env.REACT_APP_API_ADDRESS}/user`,data)
+      const response = await axios.post(`http://${process.env.REACT_APP_API_ADDRESS}:5000/user`,data)
       console.log(response.data)
     console.log(`First Name: ${firstName}, Last Name: ${lastName}, Email: ${email},Username: ${username}, Password: ${password}`);
     navigate('/')
@@ -68,21 +68,10 @@ function SignupForm() {
       </form>
       <div className="login-options">
         <hr />
-        <span>Or Signup with</span>
-        <div className="social-login-icons">
-          <a href="#">
-            <FaFacebook />
-          </a>
-          <a href="#">
-            <FaGoogle />
-          </a>
-          <a href="#">
-            <FaGithub />
-          </a>
-        </div>
+        
       </div>
       <div className="login-p">
-        Already Registered? <Link to='/login' className='link-to-login'>
+        Already Registered? <Link to='/login_customer' className='link-to-login'>
             LogIn
         </Link>
       </div>

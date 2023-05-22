@@ -55,9 +55,11 @@ const Hero = () => {
     {title: "Top Rated"},
     {title: "Fiction"},
     {title: "Sci-Fi"},
-    {title:"Spritual"}
+    {title:"Spritual"},
+    {title:"Horror"}
 
   ]
+ 
   return (
     
     <>
